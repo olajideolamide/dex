@@ -12,7 +12,6 @@
 namespace Dex\Config;
 
 use Dex\Commands\Purge;
-use Dex\Commands\SeedSample;
 use Dex\Filters\DexUiFilter;
 
 class Registrar
@@ -31,8 +30,7 @@ class Registrar
     public static function Commands(): array
     {
         return [
-            Purge::class,
-            SeedSample::class,
+            Purge::class
         ];
     }
     // phpcs:enable

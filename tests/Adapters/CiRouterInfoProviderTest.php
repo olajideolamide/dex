@@ -28,26 +28,3 @@ final class CiRouterInfoProviderTest extends TestCase
         $this->assertSame(['42'], $info->params);
     }
 }
-
-final class RouterFake
-{
-    public function controllerName(): string
-    {
-        return 'App\\Controllers\\Home';
-    }
-
-    public function methodName(): string
-    {
-        return 'index';
-    }
-
-    public function getMatchedRoute(): array
-    {
-        return ['home/(:num)', 'App\\Controllers\\Home::index'];
-    }
-
-    public function params(): array
-    {
-        return ['42'];
-    }
-}

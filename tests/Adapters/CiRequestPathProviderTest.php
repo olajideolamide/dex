@@ -24,27 +24,3 @@ final class CiRequestPathProviderTest extends TestCase
         $this->assertSame('/hello', $provider->currentPath());
     }
 }
-
-final class FakeRequest
-{
-    public function __construct(private string $path)
-    {
-    }
-
-    public function getUri(): FakeUri
-    {
-        return new FakeUri($this->path);
-    }
-}
-
-final class FakeUri
-{
-    public function __construct(private string $path)
-    {
-    }
-
-    public function getPath(): string
-    {
-        return $this->path;
-    }
-}
