@@ -22,15 +22,7 @@ if (is_file($ciBootstrap) && getenv('MINISENTRY_USE_CI_BOOTSTRAP') === '1') {
 
 // Stub Config\Modules when running tests outside a full CI4 app.
 if (! class_exists('Config\\Modules')) {
-    class DexTestModules
-    {
-        public function shouldDiscover(string $type): bool
-        {
-            return false;
-        }
-    }
-
-    class_alias(DexTestModules::class, 'Config\\Modules');
+    class_alias(\Dex\Tests\Support\DexTestModules::class, 'Config\\Modules');
 }
 
 // Sensible defaults for tests when running inside another project.

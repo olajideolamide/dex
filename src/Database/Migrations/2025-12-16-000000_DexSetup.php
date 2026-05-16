@@ -36,7 +36,7 @@ class DexSetup extends Migration
         $this->forge->addUniqueKey('fingerprint');
         $this->forge->addKey('status');
         $this->forge->addKey('last_seen');
-        $this->forge->addKey(['status', 'last_seen'], false, 'idx_dex_issues_status_last_seen');
+        $this->forge->addKey(['status', 'last_seen'], false, false, 'idx_dex_issues_status_last_seen');
         $this->forge->createTable('dex_issues', true);
 
         // dex_occurrences
@@ -52,7 +52,7 @@ class DexSetup extends Migration
         $this->forge->addKey('issue_id');
         $this->forge->addKey('request_id');
         $this->forge->addKey('happened_at');
-        $this->forge->addKey(['issue_id', 'happened_at'], false, 'idx_dex_occurrences_issue_happened_at');
+        $this->forge->addKey(['issue_id', 'happened_at'], false, false, 'idx_dex_occurrences_issue_happened_at');
         $this->forge->createTable('dex_occurrences', true);
 
         // dex_requests
@@ -85,10 +85,10 @@ class DexSetup extends Migration
         $this->forge->addKey('request_id');
         $this->forge->addUniqueKey('request_id');
         $this->forge->addKey('created_at');
-        $this->forge->addKey('slow_request', false, 'idx_dex_requests_slow_request');
-        $this->forge->addKey('slow_query_count', false, 'idx_dex_requests_slow_query_count');
-        $this->forge->addKey('slowest_query_ms', false, 'idx_dex_requests_slowest_query_ms');
-        $this->forge->addKey(['controller', 'action'], false, 'idx_dex_requests_controller_action');
+        $this->forge->addKey('slow_request', false, false, 'idx_dex_requests_slow_request');
+        $this->forge->addKey('slow_query_count', false, false, 'idx_dex_requests_slow_query_count');
+        $this->forge->addKey('slowest_query_ms', false, false, 'idx_dex_requests_slowest_query_ms');
+        $this->forge->addKey(['controller', 'action'], false, false, 'idx_dex_requests_controller_action');
         $this->forge->createTable('dex_requests', true);
     }
 
