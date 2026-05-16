@@ -20,7 +20,7 @@ final class StubRequest implements RequestInterface
     private string $body = '';
 
     public function __construct(
-        private FakeUri $uri,
+        private URI $uri,
         array $get = [],
         array $post = [],
         array $files = [],
@@ -172,6 +172,13 @@ final class StubRequest implements RequestInterface
 
     public function withUri(URI $uri, $preserveHost = false)
     {
+        if ($preserveHost === true && $this->uri->getHost() !== '' && $uri->getHost() === '') {
+            $query = $uri->getQuery();
+            $query = $query !== '' ? ('?' . $query) : '';
+            $uri = new URI($this->uri->getScheme() . '://' . $this->uri->getHost() . $uri->getPath() . $query);
+        }
+
+        $this->uri = $uri;
         return $this;
     }
 

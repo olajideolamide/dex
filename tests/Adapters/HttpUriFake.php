@@ -12,7 +12,8 @@ final class HttpUriFake
 
     public function __toString(): string
     {
-        $query = $this->query ? ('?' . implode('&', $this->query)) : '';
+        $queryString = $this->query === [] ? '' : http_build_query($this->query);
+        $query = $queryString !== '' ? ('?' . $queryString) : '';
         return 'https://example.test' . $this->path . $query;
     }
 
@@ -23,6 +24,6 @@ final class HttpUriFake
 
     public function getQuery(): string
     {
-        return implode('&', $this->query);
+        return $this->query === [] ? '' : http_build_query($this->query);
     }
 }
