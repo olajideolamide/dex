@@ -1,0 +1,446 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Function service not found\\.$#"
+			count: 2
+			path: src/Adapters/CiCacheStore.php
+
+		-
+			message: "#^Function db_connect not found\\.$#"
+			count: 2
+			path: src/Adapters/CiDbBucketExpressionProvider.php
+
+		-
+			message: "#^Function service not found\\.$#"
+			count: 2
+			path: src/Adapters/CiHttpContextProvider.php
+
+		-
+			message: "#^Function service not found\\.$#"
+			count: 1
+			path: src/Adapters/CiRequestPathProvider.php
+
+		-
+			message: "#^Call to static method response\\(\\) on an unknown class Config\\\\Services\\.$#"
+			count: 1
+			path: src/Adapters/CiResponseFactory.php
+
+		-
+			message: "#^Function service not found\\.$#"
+			count: 1
+			path: src/Adapters/CiRouterInfoProvider.php
+
+		-
+			message: "#^Class Config\\\\Database not found\\.$#"
+			count: 1
+			path: src/Commands/SeedSample.php
+
+		-
+			message: "#^Function config not found\\.$#"
+			count: 1
+			path: src/Commands/SeedSample.php
+
+		-
+			message: "#^Call to static method request\\(\\) on an unknown class Config\\\\Services\\.$#"
+			count: 1
+			path: src/Config/Events.php
+
+		-
+			message: "#^Call to static method response\\(\\) on an unknown class Config\\\\Services\\.$#"
+			count: 2
+			path: src/Config/Events.php
+
+		-
+			message: "#^Function helper not found\\.$#"
+			count: 1
+			path: src/Config/Routes.php
+
+		-
+			message: "#^Call to static method connect\\(\\) on an unknown class Config\\\\Database\\.$#"
+			count: 1
+			path: src/Config/Services.php
+
+		-
+			message: "#^Function site_url not found\\.$#"
+			count: 5
+			path: src/Controllers/Issues.php
+
+		-
+			message: "#^Function view not found\\.$#"
+			count: 5
+			path: src/Controllers/Issues.php
+
+		-
+			message: "#^Parameter \\#3 \\$unique of method CodeIgniter\\\\Database\\\\Forge\\:\\:addKey\\(\\) expects bool, string given\\.$#"
+			count: 6
+			path: src/Database/Migrations/2025-12-16-000000_CreateSentryTable.php
+
+		-
+			message: "#^Offset 1 on array\\{string, non\\-empty\\-string\\} on left side of \\?\\? always exists and is not nullable\\.$#"
+			count: 1
+			path: src/Database/Seeds/DexSampleDataSeeder.php
+
+		-
+			message: "#^Expression on left side of \\?\\? is not nullable\\.$#"
+			count: 1
+			path: src/Dex.php
+
+		-
+			message: "#^Property Dex\\\\Dex\\:\\:\\$storage is never read, only written\\.$#"
+			count: 1
+			path: src/Dex.php
+
+		-
+			message: "#^Method Dex\\\\Filters\\\\DexUiFilter\\:\\:after\\(\\) should return CodeIgniter\\\\HTTP\\\\ResponseInterface\\|null but return statement is missing\\.$#"
+			count: 1
+			path: src/Filters/DexUiFilter.php
+
+		-
+			message: "#^Result of && is always false\\.$#"
+			count: 1
+			path: src/Filters/DexUiFilter.php
+
+		-
+			message: "#^Strict comparison using \\=\\=\\= between 'testing' and 'production' will always evaluate to false\\.$#"
+			count: 1
+			path: src/Filters/DexUiFilter.php
+
+		-
+			message: "#^Constant ROOTPATH not found\\.$#"
+			count: 2
+			path: src/Helpers/dex_helper.php
+
+		-
+			message: "#^Function esc not found\\.$#"
+			count: 6
+			path: src/Helpers/dex_helper.php
+
+		-
+			message: "#^Offset 'k' on array\\{k\\: string, v\\: mixed, mono\\?\\: bool, copy\\?\\: string\\} on left side of \\?\\? always exists and is not nullable\\.$#"
+			count: 1
+			path: src/Helpers/dex_helper.php
+
+		-
+			message: "#^Strict comparison using \\=\\=\\= between mixed and null will always evaluate to false\\.$#"
+			count: 1
+			path: src/Helpers/dex_helper.php
+
+		-
+			message: "#^Call to static method connect\\(\\) on an unknown class Config\\\\Database\\.$#"
+			count: 1
+			path: src/Repositories/IssueRepository.php
+
+		-
+			message: "#^Offset 'file' on array\\{type\\: int, message\\: string, file\\: string, line\\: int\\} on left side of \\?\\? always exists and is not nullable\\.$#"
+			count: 1
+			path: src/Services/Core/ExceptionHandlerService.php
+
+		-
+			message: "#^Offset 'line' on array\\{type\\: int, message\\: string, file\\: string, line\\: int\\} on left side of \\?\\? always exists and is not nullable\\.$#"
+			count: 1
+			path: src/Services/Core/ExceptionHandlerService.php
+
+		-
+			message: "#^Offset 'message' on array\\{type\\: int, message\\: string, file\\: string, line\\: int\\} on left side of \\?\\? always exists and is not nullable\\.$#"
+			count: 1
+			path: src/Services/Core/ExceptionHandlerService.php
+
+		-
+			message: "#^Offset 'type' on array\\{type\\: int, message\\: string, file\\: string, line\\: int\\} on left side of \\?\\? always exists and is not nullable\\.$#"
+			count: 1
+			path: src/Services/Core/ExceptionHandlerService.php
+
+		-
+			message: "#^Method Dex\\\\Services\\\\Core\\\\OccurrenceService\\:\\:runtimeContext\\(\\) never returns null so it can be removed from the return type\\.$#"
+			count: 1
+			path: src/Services/Core/OccurrenceService.php
+
+		-
+			message: "#^Property Dex\\\\Services\\\\Core\\\\QueryTrackingService\\:\\:\\$config is never read, only written\\.$#"
+			count: 1
+			path: src/Services/Core/QueryTrackingService.php
+
+		-
+			message: "#^Property Dex\\\\Services\\\\Core\\\\RequestContextService\\:\\:\\$config is never read, only written\\.$#"
+			count: 1
+			path: src/Services/Core/RequestContextService.php
+
+		-
+			message: "#^Negated boolean expression is always true\\.$#"
+			count: 1
+			path: src/Services/Issues/IssueShowBreakdownsService.php
+
+		-
+			message: "#^Offset 1 on array\\{string, non\\-empty\\-string\\} on left side of \\?\\? always exists and is not nullable\\.$#"
+			count: 2
+			path: src/Services/Issues/IssueShowViewPrepService.php
+
+		-
+			message: "#^Function config not found\\.$#"
+			count: 1
+			path: src/Services/Support/FilterService.php
+
+		-
+			message: "#^Property Dex\\\\Services\\\\Support\\\\FilterService\\:\\:\\$config is never read, only written\\.$#"
+			count: 1
+			path: src/Services/Support/FilterService.php
+
+		-
+			message: "#^Property Dex\\\\Services\\\\Support\\\\FilterService\\:\\:\\$pathService is never read, only written\\.$#"
+			count: 1
+			path: src/Services/Support/FilterService.php
+
+		-
+			message: "#^Strict comparison using \\=\\=\\= between non\\-falsy\\-string and '' will always evaluate to false\\.$#"
+			count: 1
+			path: src/Support/IpAllowList.php
+
+		-
+			message: "#^Offset 1 on array\\{string, non\\-empty\\-string\\} on left side of \\?\\? always exists and is not nullable\\.$#"
+			count: 1
+			path: src/Support/RequestSnapshot.php
+
+		-
+			message: "#^Function esc not found\\.$#"
+			count: 1
+			path: src/Views/dex/error.php
+
+		-
+			message: "#^Function esc not found\\.$#"
+			count: 8
+			path: src/Views/dex/issues/_dialog_v2_lifecycle_section.php
+
+		-
+			message: "#^Function esc not found\\.$#"
+			count: 1
+			path: src/Views/dex/issues/_dialog_v2_metrics_section.php
+
+		-
+			message: "#^Function esc not found\\.$#"
+			count: 5
+			path: src/Views/dex/issues/_dialog_v2_stack_section.php
+
+		-
+			message: "#^Variable \\$culprit might not be defined\\.$#"
+			count: 3
+			path: src/Views/dex/issues/_dialog_v2_stack_section.php
+
+		-
+			message: "#^Variable \\$fullUrl might not be defined\\.$#"
+			count: 2
+			path: src/Views/dex/issues/_http_tab.php
+
+		-
+			message: "#^Variable \\$hasHttpHeaders might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues/_http_tab.php
+
+		-
+			message: "#^Variable \\$method might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues/_http_tab.php
+
+		-
+			message: "#^Variable \\$path might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues/_http_tab.php
+
+		-
+			message: "#^Variable \\$query might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues/_http_tab.php
+
+		-
+			message: "#^Variable \\$ctx might not be defined\\.$#"
+			count: 2
+			path: src/Views/dex/issues/_raw_tab.php
+
+		-
+			message: "#^Variable \\$hasReq might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues/_raw_tab.php
+
+		-
+			message: "#^Variable \\$requestRow might not be defined\\.$#"
+			count: 2
+			path: src/Views/dex/issues/_raw_tab.php
+
+		-
+			message: "#^Variable \\$ua might not be defined\\.$#"
+			count: 2
+			path: src/Views/dex/issues/_tags_tab.php
+
+		-
+			message: "#^Function esc not found\\.$#"
+			count: 18
+			path: src/Views/dex/issues_dialog_event_content.php
+
+		-
+			message: "#^Variable \\$action might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues_dialog_event_content.php
+
+		-
+			message: "#^Variable \\$controller might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues_dialog_event_content.php
+
+		-
+			message: "#^Variable \\$culprit might not be defined\\.$#"
+			count: 2
+			path: src/Views/dex/issues_dialog_event_content.php
+
+		-
+			message: "#^Variable \\$dbCnt might not be defined\\.$#"
+			count: 2
+			path: src/Views/dex/issues_dialog_event_content.php
+
+		-
+			message: "#^Variable \\$dbMs might not be defined\\.$#"
+			count: 2
+			path: src/Views/dex/issues_dialog_event_content.php
+
+		-
+			message: "#^Variable \\$durMs might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues_dialog_event_content.php
+
+		-
+			message: "#^Variable \\$env might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues_dialog_event_content.php
+
+		-
+			message: "#^Variable \\$ip might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues_dialog_event_content.php
+
+		-
+			message: "#^Variable \\$memPk might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues_dialog_event_content.php
+
+		-
+			message: "#^Variable \\$method might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues_dialog_event_content.php
+
+		-
+			message: "#^Variable \\$path might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues_dialog_event_content.php
+
+		-
+			message: "#^Variable \\$phpVer might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues_dialog_event_content.php
+
+		-
+			message: "#^Variable \\$rid might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues_dialog_event_content.php
+
+		-
+			message: "#^Function esc not found\\.$#"
+			count: 12
+			path: src/Views/dex/issues_dialog_shell.php
+
+		-
+			message: "#^Function view not found\\.$#"
+			count: 1
+			path: src/Views/dex/issues_dialog_shell.php
+
+		-
+			message: "#^Variable \\$exc might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/issues_dialog_shell.php
+
+		-
+			message: "#^Function view not found\\.$#"
+			count: 6
+			path: src/Views/dex/issues_dialog_tab.php
+
+		-
+			message: "#^Function esc not found\\.$#"
+			count: 15
+			path: src/Views/dex/issues_list.php
+
+		-
+			message: "#^Variable \\$this might not be defined\\.$#"
+			count: 3
+			path: src/Views/dex/issues_list.php
+
+		-
+			message: "#^Function esc not found\\.$#"
+			count: 1
+			path: src/Views/dex/layout.php
+
+		-
+			message: "#^Variable \\$this might not be defined\\.$#"
+			count: 1
+			path: src/Views/dex/layout.php
+
+		-
+			message: "#^Call to static method injectMock\\(\\) on an unknown class Config\\\\Services\\.$#"
+			count: 1
+			path: tests/Adapters/CiCacheStoreTest.php
+
+		-
+			message: "#^Call to static method resetSingle\\(\\) on an unknown class Config\\\\Services\\.$#"
+			count: 1
+			path: tests/Adapters/CiCacheStoreTest.php
+
+		-
+			message: "#^Call to static method injectMock\\(\\) on an unknown class Config\\\\Services\\.$#"
+			count: 2
+			path: tests/Adapters/CiHttpContextProviderTest.php
+
+		-
+			message: "#^Call to static method resetSingle\\(\\) on an unknown class Config\\\\Services\\.$#"
+			count: 1
+			path: tests/Adapters/CiHttpContextProviderTest.php
+
+		-
+			message: "#^Call to function is_string\\(\\) with array\\<int, CodeIgniter\\\\HTTP\\\\Header\\>\\|CodeIgniter\\\\HTTP\\\\Header\\|null will always evaluate to false\\.$#"
+			count: 1
+			path: tests/Adapters/CiRequestMetaFactoryTest.php
+
+		-
+			message: "#^Method Dex\\\\Tests\\\\Adapters\\\\StubRequest\\:\\:getUri\\(\\) should return CodeIgniter\\\\HTTP\\\\URI but returns Dex\\\\Tests\\\\Adapters\\\\StubUri\\.$#"
+			count: 1
+			path: tests/Adapters/CiRequestMetaFactoryTest.php
+
+		-
+			message: "#^Call to static method injectMock\\(\\) on an unknown class Config\\\\Services\\.$#"
+			count: 1
+			path: tests/Adapters/CiRequestPathProviderTest.php
+
+		-
+			message: "#^Call to static method resetSingle\\(\\) on an unknown class Config\\\\Services\\.$#"
+			count: 1
+			path: tests/Adapters/CiRequestPathProviderTest.php
+
+		-
+			message: "#^Call to static method injectMock\\(\\) on an unknown class Config\\\\Services\\.$#"
+			count: 1
+			path: tests/Adapters/CiRouterInfoProviderTest.php
+
+		-
+			message: "#^Call to static method resetSingle\\(\\) on an unknown class Config\\\\Services\\.$#"
+			count: 1
+			path: tests/Adapters/CiRouterInfoProviderTest.php
+
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 1
+			path: tests/Filters/DexUiFilterTest.php
+
+		-
+			message: "#^Instanceof between array\\<int, CodeIgniter\\\\HTTP\\\\Header\\>\\|CodeIgniter\\\\HTTP\\\\Header\\|null and Dex\\\\Tests\\\\Support\\\\StubHeader will always evaluate to false\\.$#"
+			count: 1
+			path: tests/Support/RequestSnapshotTest.php
+
+		-
+			message: "#^Method Dex\\\\Tests\\\\Support\\\\StubRequest\\:\\:getUri\\(\\) should return CodeIgniter\\\\HTTP\\\\URI but returns Dex\\\\Tests\\\\Support\\\\FakeUri\\.$#"
+			count: 1
+			path: tests/Support/RequestSnapshotTest.php

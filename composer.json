@@ -1,0 +1,44 @@
+{
+  "name": "olajideolamide/dex",
+  "description": "Open-source monitoring for CodeIgniter 4",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.2",
+    "codeigniter4/framework": "^4.5 || ^4.6",
+    "ext-mbstring": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dex\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Dex\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit -c phpunit.xml.dist",
+    "phpstan": "phpstan analyse --configuration=phpstan.neon.dist --no-progress --memory-limit=1G",
+    "phpcs": "php tools/qa/run-phpcs-changed.php",
+    "phpcs:all": "phpcs --standard=phpcs.xml.dist --colors",
+    "phpcbf": "phpcbf --standard=phpcs.xml.dist --colors",
+    "qa": [
+      "@phpstan",
+      "@test"
+    ],
+    "qa:full": [
+      "@phpstan",
+      "@phpcs",
+      "@test"
+    ]
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^1.12",
+    "phpunit/phpunit": "^10.5",
+    "squizlabs/php_codesniffer": "^3.10"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

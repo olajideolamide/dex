@@ -1,0 +1,12 @@
+includes:
+  - phpstan-baseline.neon
+
+parameters:
+  level: 5
+  reportUnmatchedIgnoredErrors: false
+  paths:
+    - src
+    - tests
+  tmpDir: var/phpstan
+  bootstrapFiles:
+    - tests/bootstrap.php
