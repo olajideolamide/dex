@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="docs-layout">
+  {{ partial "sidebar.html" . }}
+  <main class="docs-main">
+    <article class="docs-content">
+      <div class="docs-breadcrumb">
+        {{ $ancestors := .Ancestors.Reverse }}
+        {{ range $ancestors }}
+          {{ if ne .Kind "home" }}
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2l4 4-4 4"/></svg>
+          {{ end }}
+        {{ end }}
+        <span>{{ .Title }}</span>
+      </div>
+
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="docs-lead">{{ . }}</p>{{ end }}
+
+      <div class="docs-body">
+        {{ .Content }}
+      </div>
+
+      {{ partial "pager.html" . }}
+    </article>
+    {{ partial "toc.html" . }}
+  </main>
+</div>
+{{ end }}

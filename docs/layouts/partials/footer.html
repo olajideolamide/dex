@@ -1,0 +1,33 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="{{ "/" | relURL }}" class="logo">
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="6" fill="#DD4814"/>
+          <text x="16" y="22" text-anchor="middle" font-family="'DM Sans', sans-serif" font-weight="800" font-size="16" fill="white">D</text>
+        </svg>
+        <span>DEX</span>
+      </a>
+      <p>Open-source issue tracking for CodeIgniter 4.<br>MIT Licensed | Built by <a href="https://github.com/olajideolamide" target="_blank" rel="noopener">Olajide</a>.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Documentation</h4>
+        <a href="{{ "docs/getting-started/installation/" | relURL }}">Installation</a>
+        <a href="{{ "docs/configuration/basic/" | relURL }}">Configuration</a>
+        <a href="{{ "docs/dashboard/overview/" | relURL }}">Dashboard</a>
+        <a href="{{ "docs/security/overview/" | relURL }}">Security</a>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
+        <a href="{{ .Site.Params.packagist }}" target="_blank" rel="noopener">Packagist</a>
+        <a href="{{ .Site.Params.github }}/discussions" target="_blank" rel="noopener">Discussions</a>
+        <a href="{{ .Site.Params.github }}/issues" target="_blank" rel="noopener">Report a Bug</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; {{ now.Year }} DEX. All rights reserved.</p>
+  </div>
+</footer>

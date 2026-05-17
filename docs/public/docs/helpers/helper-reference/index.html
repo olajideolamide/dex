@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helper Reference · DEX Documentation</title>
+  <meta name="description" content="Quick reference for all shipped DEX helper functions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+</head>
+<body>
+  <header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="6" fill="#DD4814"/>
+        <text x="16" y="22" text-anchor="middle" font-family="'DM Sans', sans-serif" font-weight="800" font-size="16" fill="white">D</text>
+      </svg>
+      <span class="logo-text">DEX <span class="logo-docs">docs</span></span>
+    </a>
+
+    <nav class="header-nav" id="headerNav">
+      
+        <a href="/docs/" class="nav-link" >
+          Docs
+          
+        </a>
+      
+        <a href="https://github.com/dex/dex" class="nav-link" target="_blank" rel="noopener">
+          GitHub
+          
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3.5 1.5H10.5V8.5M10.5 1.5L1.5 10.5"/>
+            </svg>
+          
+        </a>
+      
+        <a href="https://packagist.org/packages/dex/dex" class="nav-link" target="_blank" rel="noopener">
+          Packagist
+          
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3.5 1.5H10.5V8.5M10.5 1.5L1.5 10.5"/>
+            </svg>
+          
+        </a>
+      
+    </nav>
+
+    <div class="header-actions">
+      <button class="search-trigger" id="searchTrigger" aria-label="Search docs">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="7.5" cy="7.5" r="5.5"/>
+          <path d="M11.5 11.5L16 16"/>
+        </svg>
+        <span class="search-shortcut">Ctrl K</span>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="9" cy="9" r="4"/>
+          <path d="M9 1v2M9 15v2M1 9h2M15 9h2M3.3 3.3l1.4 1.4M13.3 13.3l1.4 1.4M3.3 14.7l1.4-1.4M13.3 4.7l1.4-1.4"/>
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none">
+          <path d="M15.1 10.4A7 7 0 0 1 7.6 2.9 7 7 0 1 0 15.1 10.4z"/>
+        </svg>
+      </button>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 5h14M3 10h14M3 15h14"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<div class="search-modal" id="searchModal">
+  <div class="search-backdrop" id="searchBackdrop"></div>
+  <div class="search-dialog">
+    <div class="search-input-wrap">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8">
+        <circle cx="7.5" cy="7.5" r="5.5"/>
+        <path d="M11.5 11.5L16 16"/>
+      </svg>
+      <input type="text" id="searchInput" placeholder="Search documentation..." autocomplete="off">
+      <kbd>esc</kbd>
+    </div>
+    <div class="search-results" id="searchResults">
+      <div class="search-empty">Start typing to search the docs...</div>
+    </div>
+  </div>
+</div>
+
+  <div class="site-wrapper">
+    
+<div class="docs-layout">
+  <aside class="docs-sidebar" id="docsSidebar">
+  <div class="sidebar-inner">
+    
+
+    
+      
+      
+        
+
+
+
+
+
+
+
+  <div class="sidebar-section">
+    <h3 class="sidebar-heading">
+      <a href="/docs/getting-started/" class="sidebar-link ">
+        Getting Started
+      </a>
+    </h3>
+
+    
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/docs/getting-started/introduction/" class="sidebar-link ">
+              Introduction
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/getting-started/installation/" class="sidebar-link ">
+              Installation
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/getting-started/quickstart/" class="sidebar-link ">
+              Quick Start
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/getting-started/how-dex-works/" class="sidebar-link ">
+              How DEX Works
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/getting-started/upgrading/" class="sidebar-link ">
+              Upgrading
+            </a>
+          </li>
+        
+
+        
+      </ul>
+    
+  </div>
+
+
+      
+    
+      
+      
+        
+
+
+
+
+
+
+
+  <div class="sidebar-section">
+    <h3 class="sidebar-heading">
+      <a href="/docs/configuration/" class="sidebar-link ">
+        Configuration
+      </a>
+    </h3>
+
+    
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/docs/configuration/overview/" class="sidebar-link ">
+              Configuration Overview
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/configuration/basic/" class="sidebar-link ">
+              Basic Configuration
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/configuration/environments/" class="sidebar-link ">
+              Environments
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/configuration/notifications/" class="sidebar-link ">
+              Purging &amp; Retention
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/configuration/config-reference/" class="sidebar-link ">
+              Configuration Reference
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/configuration/performance-and-limits/" class="sidebar-link ">
+              Performance &amp; Limits
+            </a>
+          </li>
+        
+
+        
+      </ul>
+    
+  </div>
+
+
+      
+    
+      
+      
+        
+
+
+
+
+
+
+
+  <div class="sidebar-section">
+    <h3 class="sidebar-heading">
+      <a href="/docs/dashboard/" class="sidebar-link ">
+        Dashboard
+      </a>
+    </h3>
+
+    
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/docs/dashboard/overview/" class="sidebar-link ">
+              Dashboard Overview
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/dashboard/issue-detail/" class="sidebar-link ">
+              Issue Detail
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/dashboard/search-filtering/" class="sidebar-link ">
+              Search &amp; Filtering
+            </a>
+          </li>
+        
+
+        
+      </ul>
+    
+  </div>
+
+
+      
+    
+      
+      
+        
+
+
+
+
+
+
+
+  <div class="sidebar-section">
+    <h3 class="sidebar-heading">
+      <a href="/docs/helpers/" class="sidebar-link active">
+        Helpers
+      </a>
+    </h3>
+
+    
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/docs/helpers/overview/" class="sidebar-link ">
+              Helpers Overview
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/helpers/capturing-exceptions/" class="sidebar-link ">
+              Capturing Exceptions
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/helpers/breadcrumbs/" class="sidebar-link ">
+              Breadcrumbs
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/helpers/spans/" class="sidebar-link ">
+              Spans
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/helpers/helper-reference/" class="sidebar-link active">
+              Helper Reference
+            </a>
+          </li>
+        
+
+        
+      </ul>
+    
+  </div>
+
+
+      
+    
+      
+      
+        
+
+
+
+
+
+
+
+  <div class="sidebar-section">
+    <h3 class="sidebar-heading">
+      <a href="/docs/security/" class="sidebar-link ">
+        Security
+      </a>
+    </h3>
+
+    
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/docs/security/overview/" class="sidebar-link ">
+              Security Overview
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/security/protecting-the-dashboard/" class="sidebar-link ">
+              Protecting the Dashboard
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/security/reverse-proxy-https-headers/" class="sidebar-link ">
+              Reverse Proxy, HTTPS, and Headers
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/security/database-permissions-and-secrets/" class="sidebar-link ">
+              Database Permissions &amp; Secrets
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/security/pii-and-data-handling/" class="sidebar-link ">
+              PII &amp; Data Handling
+            </a>
+          </li>
+        
+
+        
+      </ul>
+    
+  </div>
+
+
+      
+    
+      
+      
+        
+
+
+
+
+
+
+
+  <div class="sidebar-section">
+    <h3 class="sidebar-heading">
+      <a href="/docs/advanced/" class="sidebar-link ">
+        Advanced
+      </a>
+    </h3>
+
+    
+      <ul class="sidebar-links">
+        
+          <li>
+            <a href="/docs/advanced/custom-fingerprinting/" class="sidebar-link ">
+              Fingerprinting
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/advanced/regression-detection/" class="sidebar-link ">
+              Regressions
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/advanced/data-scrubbing/" class="sidebar-link ">
+              Data Scrubbing
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/advanced/extending/" class="sidebar-link ">
+              Extending DEX
+            </a>
+          </li>
+        
+
+        
+      </ul>
+    
+  </div>
+
+
+      
+    
+
+    <div class="sidebar-badge">
+      <span class="badge-version">v1.0</span>
+      <a href="https://github.com/olajideolamide/dex" class="badge-gh" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        Star
+      </a>
+    </div>
+  </div>
+</aside>
+
+  <main class="docs-main">
+    <article class="docs-content">
+      <div class="docs-breadcrumb">
+        
+        
+          
+        
+          
+            <a href="/docs/">Documentation</a>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2l4 4-4 4"/></svg>
+          
+        
+          
+            <a href="/docs/helpers/">Helpers</a>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2l4 4-4 4"/></svg>
+          
+        
+        <span>Helper Reference</span>
+      </div>
+
+      <h1>Helper Reference</h1>
+      <p class="docs-lead">Quick reference for all shipped DEX helper functions.</p>
+
+      <div class="docs-body">
+        <p>This is a compact reference for the helpers defined in the DEX helper file.</p>
+<h2 id="config--routing">Config &amp; routing</h2>
+<h3 id="dex_config-object"><code>dex_config(): object</code></h3>
+<p>Returns the resolved DEX config object (defaults + <code>DEX_*</code> overrides).</p>
+<h3 id="dex_route_prefix-string"><code>dex_route_prefix(): string</code></h3>
+<p>Returns the configured route prefix (falls back to <code>dex</code>).</p>
+<h2 id="formatting-helpers">Formatting helpers</h2>
+<h3 id="dex_format_bytesintfloat-bytes-string"><code>dex_format_bytes(int|float $bytes): string</code></h3>
+<p>Formats a byte count (e.g. <code>1048576</code> → <code>1.00 MB</code>).</p>
+<h3 id="dex_format_msintfloat-milliseconds-string"><code>dex_format_ms(int|float $milliseconds): string</code></h3>
+<p>Formats milliseconds into <code>ms</code> or seconds.</p>
+<h3 id="dex_format_datetimestring-datetime-string"><code>dex_format_datetime(?string $datetime): string</code></h3>
+<p>Formats an ISO/SQL datetime for display using the configured timezone.</p>
+<h3 id="dex_time_agostring-datetime-string"><code>dex_time_ago(?string $datetime): string</code></h3>
+<p>Returns a human-friendly “time ago” string.</p>
+<h3 id="dex_agestring-from-string-to--null-string"><code>dex_age(?string $from, ?string $to = null): string</code></h3>
+<p>Returns the age/duration between two datetimes.</p>
+<h2 id="debug-helpers">Debug helpers</h2>
+<h3 id="dex_code_snippetstring-file-int-line-int-radius--3-array"><code>dex_code_snippet(?string $file, ?int $line, int $radius = 3): ?array</code></h3>
+<p>Reads a small code snippet around a line number.</p>
+<p>For safety, it returns <code>null</code> when the file:</p>
+<ul>
+<li>Can’t be read, or</li>
+<li>Is outside <code>ROOTPATH</code></li>
+</ul>
+<h2 id="telemetry-helpers">Telemetry helpers</h2>
+<h3 id="dex_breadcrumbstring-category-string-message-array-data---string-level--info-void"><code>dex_breadcrumb(string $category, string $message, array $data = [], string $level = 'info'): void</code></h3>
+<p>Adds a breadcrumb to the current request (if enabled).</p>
+<h3 id="dex_span_startstring-operation-string-description--null-array-tags---string"><code>dex_span_start(string $operation, ?string $description = null, array $tags = []): ?string</code></h3>
+<p>Starts a span and returns its ID.</p>
+<h3 id="dex_span_finishstring-id-void"><code>dex_span_finish(?string $id): void</code></h3>
+<p>Finishes a span by ID.</p>
+<h3 id="dex_spanstring-operation-string-description-callable-callback-array-tags--"><code>dex_span(string $operation, ?string $description, callable $callback, array $tags = [])</code></h3>
+<p>Runs a callback inside a span and returns the callback result.</p>
+<h3 id="dex_capture_exceptionthrowable-exception-void"><code>dex_capture_exception(Throwable $exception): void</code></h3>
+<p>Captures a caught exception as an occurrence/issue.</p>
+
+      </div>
+
+      
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+<nav class="docs-pager">
+  
+    
+    <a href="/docs/helpers/spans/" class="pager-link pager-prev">
+      <span class="pager-label">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2L4 7l5 5"/></svg>
+        Previous
+      </span>
+      <span class="pager-title">Spans</span>
+    </a>
+  
+
+  
+    
+    <a href="/docs/security/overview/" class="pager-link pager-next">
+      <span class="pager-label">
+        Next
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2l5 5-5 5"/></svg>
+      </span>
+      <span class="pager-title">Security Overview</span>
+    </a>
+  
+</nav>
+
+
+    </article>
+    
+<nav class="toc" id="tableOfContents">
+  <h4 class="toc-title">On this page</h4>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#config--routing">Config &amp; routing</a>
+      <ul>
+        <li><a href="#dex_config-object"><code>dex_config(): object</code></a></li>
+        <li><a href="#dex_route_prefix-string"><code>dex_route_prefix(): string</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#formatting-helpers">Formatting helpers</a>
+      <ul>
+        <li><a href="#dex_format_bytesintfloat-bytes-string"><code>dex_format_bytes(int|float $bytes): string</code></a></li>
+        <li><a href="#dex_format_msintfloat-milliseconds-string"><code>dex_format_ms(int|float $milliseconds): string</code></a></li>
+        <li><a href="#dex_format_datetimestring-datetime-string"><code>dex_format_datetime(?string $datetime): string</code></a></li>
+        <li><a href="#dex_time_agostring-datetime-string"><code>dex_time_ago(?string $datetime): string</code></a></li>
+        <li><a href="#dex_agestring-from-string-to--null-string"><code>dex_age(?string $from, ?string $to = null): string</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#debug-helpers">Debug helpers</a>
+      <ul>
+        <li><a href="#dex_code_snippetstring-file-int-line-int-radius--3-array"><code>dex_code_snippet(?string $file, ?int $line, int $radius = 3): ?array</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#telemetry-helpers">Telemetry helpers</a>
+      <ul>
+        <li><a href="#dex_breadcrumbstring-category-string-message-array-data---string-level--info-void"><code>dex_breadcrumb(string $category, string $message, array $data = [], string $level = &#39;info&#39;): void</code></a></li>
+        <li><a href="#dex_span_startstring-operation-string-description--null-array-tags---string"><code>dex_span_start(string $operation, ?string $description = null, array $tags = []): ?string</code></a></li>
+        <li><a href="#dex_span_finishstring-id-void"><code>dex_span_finish(?string $id): void</code></a></li>
+        <li><a href="#dex_spanstring-operation-string-description-callable-callback-array-tags--"><code>dex_span(string $operation, ?string $description, callable $callback, array $tags = [])</code></a></li>
+        <li><a href="#dex_capture_exceptionthrowable-exception-void"><code>dex_capture_exception(Throwable $exception): void</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</nav>
+
+
+  </main>
+</div>
+
+  </div>
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="logo">
+        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="6" fill="#DD4814"/>
+          <text x="16" y="22" text-anchor="middle" font-family="'DM Sans', sans-serif" font-weight="800" font-size="16" fill="white">D</text>
+        </svg>
+        <span>DEX</span>
+      </a>
+      <p>Open-source issue tracking for CodeIgniter 4.<br>MIT Licensed | Built by <a href="https://github.com/olajideolamide" target="_blank" rel="noopener">Olajide</a>.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Documentation</h4>
+        <a href="/docs/getting-started/installation/">Installation</a>
+        <a href="/docs/configuration/basic/">Configuration</a>
+        <a href="/docs/dashboard/overview/">Dashboard</a>
+        <a href="/docs/security/overview/">Security</a>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <a href="https://github.com/olajideolamide/dex" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://packagist.org/packages/olajideolamide/dex" target="_blank" rel="noopener">Packagist</a>
+        <a href="https://github.com/olajideolamide/dex/discussions" target="_blank" rel="noopener">Discussions</a>
+        <a href="https://github.com/olajideolamide/dex/issues" target="_blank" rel="noopener">Report a Bug</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 DEX. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

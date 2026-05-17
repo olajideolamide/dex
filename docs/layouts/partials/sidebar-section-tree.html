@@ -1,0 +1,58 @@
+{{ $section := .section }}
+{{ $current := .current }}
+{{ $nested := .nested }}
+{{ $isActiveSection := or (eq $current.RelPermalink $section.RelPermalink) (hasPrefix $current.RelPermalink $section.RelPermalink) }}
+{{ $pages := $section.RegularPages.ByWeight }}
+{{ $children := $section.Sections.ByWeight }}
+
+{{ if not $nested }}
+  <div class="sidebar-section">
+    <h3 class="sidebar-heading">
+      <a href="{{ $section.RelPermalink }}" class="sidebar-link {{ if $isActiveSection }}active{{ end }}">
+        {{ $section.Title }}
+      </a>
+    </h3>
+
+    {{ if or (gt (len $pages) 0) (gt (len $children) 0) }}
+      <ul class="sidebar-links">
+        {{ range $pages }}
+          <li>
+            <a href="{{ .RelPermalink }}" class="sidebar-link {{ if eq $current.RelPermalink .RelPermalink }}active{{ end }}">
+              {{ .Title }}
+            </a>
+          </li>
+        {{ end }}
+
+        {{ range $children }}
+          <li>
+            <a href="{{ .RelPermalink }}" class="sidebar-link {{ if or (eq $current.RelPermalink .RelPermalink) (hasPrefix $current.RelPermalink .RelPermalink) }}active{{ end }}">
+              {{ .Title }}
+            </a>
+            {{ partial "sidebar-section-tree.html" (dict "section" . "current" $current "nested" true) }}
+          </li>
+        {{ end }}
+      </ul>
+    {{ end }}
+  </div>
+{{ else }}
+  {{ if or (gt (len $pages) 0) (gt (len $children) 0) }}
+    <ul class="sidebar-links">
+      {{ range $pages }}
+        <li>
+          <a href="{{ .RelPermalink }}" class="sidebar-link {{ if eq $current.RelPermalink .RelPermalink }}active{{ end }}">
+            {{ .Title }}
+          </a>
+        </li>
+      {{ end }}
+
+      {{ range $children }}
+        <li>
+          <a href="{{ .RelPermalink }}" class="sidebar-link {{ if or (eq $current.RelPermalink .RelPermalink) (hasPrefix $current.RelPermalink .RelPermalink) }}active{{ end }}">
+            {{ .Title }}
+          </a>
+          {{ partial "sidebar-section-tree.html" (dict "section" . "current" $current "nested" true) }}
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
+{{ end }}

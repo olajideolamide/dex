@@ -1,0 +1,35 @@
+{{ $pages := (where .Site.RegularPages "Section" "docs").ByWeight }}
+{{ $currentIndex := -1 }}
+{{ range $i, $p := $pages }}
+  {{ if eq $.RelPermalink $p.RelPermalink }}
+    {{ $currentIndex = $i }}
+  {{ end }}
+{{ end }}
+
+{{ if ge $currentIndex 0 }}
+<nav class="docs-pager">
+  {{ if gt $currentIndex 0 }}
+    {{ $prev := index $pages (sub $currentIndex 1) }}
+    <a href="{{ $prev.RelPermalink }}" class="pager-link pager-prev">
+      <span class="pager-label">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 2L4 7l5 5"/></svg>
+        Previous
+      </span>
+      <span class="pager-title">{{ $prev.Title }}</span>
+    </a>
+  {{ else }}
+    <div></div>
+  {{ end }}
+
+  {{ if lt $currentIndex (sub (len $pages) 1) }}
+    {{ $next := index $pages (add $currentIndex 1) }}
+    <a href="{{ $next.RelPermalink }}" class="pager-link pager-next">
+      <span class="pager-label">
+        Next
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2l5 5-5 5"/></svg>
+      </span>
+      <span class="pager-title">{{ $next.Title }}</span>
+    </a>
+  {{ end }}
+</nav>
+{{ end }}
