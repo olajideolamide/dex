@@ -13,6 +13,9 @@
     <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-DD4814.svg?style=flat-square"></a>
     <a href="composer.json"><img alt="PHP Version" src="https://img.shields.io/badge/php-%3E%3D%208.2-777bb4.svg?style=flat-square"></a>
     <a href="https://codeigniter.com/"><img alt="CodeIgniter 4" src="https://img.shields.io/badge/CodeIgniter-4-DD4814.svg?style=flat-square"></a>
+    <a href="https://github.com/olajideolamide/dex/actions/workflows/phpunit.yml"><img alt="PHPUnit" src="https://github.com/olajideolamide/dex/actions/workflows/phpunit.yml/badge.svg?branch=main"></a>
+    <a href="https://github.com/olajideolamide/dex/actions/workflows/phpstan.yml"><img alt="PHPStan" src="https://github.com/olajideolamide/dex/actions/workflows/phpstan.yml/badge.svg?branch=main"></a>
+    <a href="https://github.com/olajideolamide/dex/actions/workflows/phpcs.yml"><img alt="PHPCS (advisory)" src="https://github.com/olajideolamide/dex/actions/workflows/phpcs.yml/badge.svg?branch=main"></a>
 </p>
 
 <p align="center">

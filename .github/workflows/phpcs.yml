@@ -1,0 +1,47 @@
+name: PHPCS (advisory)
+
+on:
+  push:
+    branches: ["main", "develop", "release/**"]
+  pull_request:
+    branches: ["main", "develop", "release/**"]
+
+jobs:
+  phpcs:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.3"
+          coverage: none
+          tools: composer:v2
+
+      - name: Cache Composer dependencies
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-8.3-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-8.3-composer-
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Set PHPCS diff base
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "DEX_QA_DIFF_BASE=${{ github.event.pull_request.base.sha }}" >> "$GITHUB_ENV"
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            echo "DEX_QA_DIFF_BASE=${{ github.event.before }}" >> "$GITHUB_ENV"
+          fi
+
+      - name: Run PHPCS
+        run: composer phpcs
+
