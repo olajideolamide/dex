@@ -50,15 +50,4 @@ Sort the issues list by:
 Sorting by **Trend** helps you find issues that are rapidly increasing in frequency — these often indicate a new deployment problem.
 {{< /callout >}}
 
-## Keyboard Shortcuts
 
-The dashboard supports keyboard shortcuts for fast navigation:
-
-| Shortcut | Action |
-|----------|--------|
-| `/` | Focus search |
-| `j` / `k` | Navigate up/down in issue list |
-| `Enter` | Open selected issue |
-| `r` | Resolve selected issue |
-| `i` | Ignore selected issue |
-| `Esc` | Close detail view |

@@ -4,7 +4,7 @@ description: "Keep DEX useful while minimizing the risk of storing sensitive inf
 weight: 74
 ---
 
-DEX is most valuable when it stores enough context to debug issues — but that context can include sensitive inputs if you’re not careful.
+DEX is most valuable when it stores enough context to debug issues but that context can include sensitive inputs if you’re not careful.
 
 This page covers a practical approach: store what you need to debug, scrub what you shouldn’t keep.
 

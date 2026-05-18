@@ -9,7 +9,7 @@ weight: 20
 The DEX dashboard is available at:
 
 ```
-http://your-app.test/dex/issues
+http://your-app.test/dex
 ```
 
 Replace `/dex` with your configured `routePrefix` if you’ve changed it.

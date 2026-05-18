@@ -196,7 +196,7 @@ Request snapshots are stored as JSON on the request row when DEX stores the requ
   - Notes: Adds a breadcrumb for certain CI events.
 
 {{< callout type="info" >}}
-`maxBreadcrumbs`, `maxSpans`, `maxLifecycleMarkers`, `duplicateQueryThreshold`, `nPlusOneQueryThreshold`, and `breadcrumbDbQueries` exist as config knobs, but are not currently enforced everywhere. If you need hard caps, rely on `maxLifecycleItems` and the JSON byte limits for now.
+If you need hard caps, rely on `maxLifecycleItems` and the JSON byte limits.
 {{< /callout >}}
 
 ## Redaction / scrubbing

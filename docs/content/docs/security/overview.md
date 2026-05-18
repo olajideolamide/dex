@@ -4,13 +4,13 @@ description: "How to run DEX safely in production without exposing sensitive app
 weight: 70
 ---
 
-DEX stores error context and request snapshots in your own database. That’s powerful — and it means you should treat the DEX dashboard like an internal admin tool.
+DEX stores error context and request snapshots in your own database. That’s powerful and it means you should treat the DEX dashboard like an internal admin tool.
 
 This section covers practical, production-focused hardening steps.
 
 ## Golden rules
 
-- **Do not expose DEX publicly.** Keep it behind an allowlist, VPN, or admin network.
+- **Do not expose DEX publicly.** Keep it behind an allowlist, VPN, admin network or authentication.
 - **Assume request snapshots may contain sensitive data.** Configure scrubbing and be intentional about what you store.
 - **Use least-privilege database permissions** for the account your app uses.
 
