@@ -25,7 +25,6 @@ DEX is designed to be CI4-native and self-hosted. You keep your data and run it 
 - **Groups events into issues** using fingerprinting (so duplicates don’t flood your dashboard)
 - **Tracks issue status** (open, resolved, regressed, ignored)
 - **Provides a dashboard** for browsing, searching, and inspecting issues
-- **Exposes a JSON API** so you can integrate DEX with your own tooling
 
 ## Concepts
 

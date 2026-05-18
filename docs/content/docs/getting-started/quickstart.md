@@ -37,7 +37,7 @@ You’ll still see the standard CodeIgniter error page. DEX captures the excepti
 Open:
 
 ```
-http://your-app.test/dex/issues
+http://your-app.test/dex
 ```
 
 You should see a new issue for `RuntimeException`.

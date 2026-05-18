@@ -74,7 +74,6 @@ class Dex extends BaseConfig
     public string $storage = 'database';
 
     public bool $captureBreadcrumbs = true;
-    public int $maxBreadcrumbs = 50;
 
     public bool $captureSpans = true;
     public int $maxSpans = 60;

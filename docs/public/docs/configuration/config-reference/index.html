@@ -24,12 +24,7 @@
 
     <nav class="header-nav" id="headerNav">
       
-        <a href="/docs/" class="nav-link" >
-          Docs
-          
-        </a>
-      
-        <a href="https://github.com/dex/dex" class="nav-link" target="_blank" rel="noopener">
+        <a href="https://github.com/olajideolamide/dex" class="nav-link" target="_blank" rel="noopener">
           GitHub
           
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -38,7 +33,7 @@
           
         </a>
       
-        <a href="https://packagist.org/packages/dex/dex" class="nav-link" target="_blank" rel="noopener">
+        <a href="https://packagist.org/packages/olajideolamide/dex" class="nav-link" target="_blank" rel="noopener">
           Packagist
           
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -492,321 +487,288 @@
 </div>
 
 <h2 id="core-switches--routing">Core switches &amp; routing</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Option</th>
-          <th>Env</th>
-          <th style="text-align: right">Type</th>
-          <th>Default</th>
-          <th>Notes</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>enabled</code></td>
-          <td><code>DEX_ENABLED</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Turns DEX on/off globally.</td>
-      </tr>
-      <tr>
-          <td><code>routePrefix</code></td>
-          <td><code>DEX_ROUTE_PREFIX</code></td>
-          <td style="text-align: right">string</td>
-          <td><code>dex</code></td>
-          <td>URL prefix used by the dashboard routes.</td>
-      </tr>
-      <tr>
-          <td><code>requestIdHeader</code></td>
-          <td><code>DEX_REQUEST_ID_HEADER</code></td>
-          <td style="text-align: right">string</td>
-          <td><code>X-Request-Id</code></td>
-          <td>Header to read/write request IDs.</td>
-      </tr>
-  </tbody>
-</table>
+<ul>
+<li><code>enabled</code>
+<ul>
+<li>Env: <code>DEX_ENABLED</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Turns DEX on/off globally.</li>
+</ul>
+</li>
+<li><code>routePrefix</code>
+<ul>
+<li>Env: <code>DEX_ROUTE_PREFIX</code></li>
+<li>Type: <code>string</code></li>
+<li>Default: <code>dex</code></li>
+<li>Notes: URL prefix used by the dashboard routes.</li>
+</ul>
+</li>
+<li><code>requestIdHeader</code>
+<ul>
+<li>Env: <code>DEX_REQUEST_ID_HEADER</code></li>
+<li>Type: <code>string</code></li>
+<li>Default: <code>X-Request-Id</code></li>
+<li>Notes: Header to read/write request IDs.</li>
+</ul>
+</li>
+</ul>
 <h2 id="production-access-controls">Production access controls</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Option</th>
-          <th>Env</th>
-          <th style="text-align: right">Type</th>
-          <th>Default</th>
-          <th>Notes</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>allowInProduction</code></td>
-          <td><code>DEX_ALLOW_IN_PRODUCTION</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>false</code></td>
-          <td>Blocks the UI in <code>production</code> unless enabled.</td>
-      </tr>
-      <tr>
-          <td><code>uiEnabled</code></td>
-          <td><code>DEX_UI_ENABLED</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Master switch for the UI routes.</td>
-      </tr>
-      <tr>
-          <td><code>uiAllowlist</code></td>
-          <td><code>DEX_UI_ALLOWLIST</code></td>
-          <td style="text-align: right">string</td>
-          <td><code>127.0.0.1,::1</code></td>
-          <td>Comma-separated list of IPs / CIDR ranges allowed to access the UI.</td>
-      </tr>
-      <tr>
-          <td><code>allowedIPs</code></td>
-          <td><code>DEX_ALLOWED_IPS</code></td>
-          <td style="text-align: right">array</td>
-          <td><code>[]</code></td>
-          <td>Optional exact-match IP allowlist. If non-empty, the client IP must be in this list <strong>and</strong> pass <code>uiAllowlist</code>.</td>
-      </tr>
-      <tr>
-          <td><code>uiStealthDeny</code></td>
-          <td><code>DEX_UI_STEALTH_DENY</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>When denied, return <code>404</code> (stealth) instead of <code>403</code>.</td>
-      </tr>
-  </tbody>
-</table>
+<ul>
+<li><code>allowInProduction</code>
+<ul>
+<li>Env: <code>DEX_ALLOW_IN_PRODUCTION</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>false</code></li>
+<li>Notes: Blocks the UI in <code>production</code> unless enabled.</li>
+</ul>
+</li>
+<li><code>uiEnabled</code>
+<ul>
+<li>Env: <code>DEX_UI_ENABLED</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Master switch for the UI routes.</li>
+</ul>
+</li>
+<li><code>uiAllowlist</code>
+<ul>
+<li>Env: <code>DEX_UI_ALLOWLIST</code></li>
+<li>Type: <code>string</code></li>
+<li>Default: <code>127.0.0.1,::1</code></li>
+<li>Notes: Comma-separated list of IPs / CIDR ranges allowed to access the UI.</li>
+</ul>
+</li>
+<li><code>allowedIPs</code>
+<ul>
+<li>Env: <code>DEX_ALLOWED_IPS</code></li>
+<li>Type: <code>array</code></li>
+<li>Default: <code>[]</code></li>
+<li>Notes: Optional exact-match IP allowlist. If non-empty, the client IP must be in this list <strong>and</strong> pass <code>uiAllowlist</code>.</li>
+</ul>
+</li>
+<li><code>uiStealthDeny</code>
+<ul>
+<li>Env: <code>DEX_UI_STEALTH_DENY</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: When denied, return <code>404</code> (stealth) instead of <code>403</code>.</li>
+</ul>
+</li>
+</ul>
 <h2 id="error-capture">Error capture</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Option</th>
-          <th>Env</th>
-          <th style="text-align: right">Type</th>
-          <th>Default</th>
-          <th>Notes</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>captureUnhandledExceptions</code></td>
-          <td><code>DEX_CAPTURE_UNHANDLED_EXCEPTIONS</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Registers a global exception handler to capture unhandled exceptions.</td>
-      </tr>
-      <tr>
-          <td><code>captureShutdownFatals</code></td>
-          <td><code>DEX_CAPTURE_SHUTDOWN_FATALS</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Captures fatal shutdown errors (<code>E_ERROR</code>, <code>E_PARSE</code>, etc.).</td>
-      </tr>
-  </tbody>
-</table>
+<ul>
+<li><code>captureUnhandledExceptions</code>
+<ul>
+<li>Env: <code>DEX_CAPTURE_UNHANDLED_EXCEPTIONS</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Registers a global exception handler to capture unhandled exceptions.</li>
+</ul>
+</li>
+<li><code>captureShutdownFatals</code>
+<ul>
+<li>Env: <code>DEX_CAPTURE_SHUTDOWN_FATALS</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Captures fatal shutdown errors (<code>E_ERROR</code>, <code>E_PARSE</code>, etc.).</li>
+</ul>
+</li>
+</ul>
 <h2 id="request-snapshots">Request snapshots</h2>
 <p>Request snapshots are stored as JSON on the request row when DEX stores the request.</p>
-<table>
-  <thead>
-      <tr>
-          <th>Option</th>
-          <th>Env</th>
-          <th style="text-align: right">Type</th>
-          <th>Default</th>
-          <th>Notes</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>captureRequestSnapshots</code></td>
-          <td><code>DEX_CAPTURE_REQUEST_SNAPSHOTS</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Stores a request snapshot JSON alongside lifecycle JSON.</td>
-      </tr>
-      <tr>
-          <td><code>snapshotProfile</code></td>
-          <td><code>DEX_SNAPSHOT_PROFILE</code></td>
-          <td style="text-align: right">string</td>
-          <td><code>full</code></td>
-          <td><code>full</code> or <code>minimal</code>. Minimal stores a smaller subset.</td>
-      </tr>
-      <tr>
-          <td><code>maxSnapshotBytes</code></td>
-          <td><code>DEX_MAX_SNAPSHOT_BYTES</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>48000</code></td>
-          <td>Hard cap for stored snapshot JSON size.</td>
-      </tr>
-      <tr>
-          <td><code>snapshotIncludeInputKeys</code></td>
-          <td><code>DEX_SNAPSHOT_INCLUDE_INPUT_KEYS</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Stores input key names (GET/POST/FILES), not values.</td>
-      </tr>
-      <tr>
-          <td><code>snapshotMaxKeys</code></td>
-          <td><code>DEX_SNAPSHOT_MAX_KEYS</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>200</code></td>
-          <td>Max keys per input group (GET/POST/FILES).</td>
-      </tr>
-      <tr>
-          <td><code>snapshotIncludeHeaders</code></td>
-          <td><code>DEX_SNAPSHOT_INCLUDE_HEADERS</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Stores request headers in snapshot (sensitive headers are excluded).</td>
-      </tr>
-      <tr>
-          <td><code>snapshotHeaderAllowlist</code></td>
-          <td><code>DEX_SNAPSHOT_HEADER_ALLOWLIST</code></td>
-          <td style="text-align: right">array</td>
-          <td><code>[]</code></td>
-          <td>If provided, only these header names are included (case-insensitive).</td>
-      </tr>
-  </tbody>
-</table>
+<ul>
+<li><code>captureRequestSnapshots</code>
+<ul>
+<li>Env: <code>DEX_CAPTURE_REQUEST_SNAPSHOTS</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Stores a request snapshot JSON alongside lifecycle JSON.</li>
+</ul>
+</li>
+<li><code>snapshotProfile</code>
+<ul>
+<li>Env: <code>DEX_SNAPSHOT_PROFILE</code></li>
+<li>Type: <code>string</code></li>
+<li>Default: <code>full</code></li>
+<li>Notes: <code>full</code> or <code>minimal</code>. Minimal stores a smaller subset.</li>
+</ul>
+</li>
+<li><code>maxSnapshotBytes</code>
+<ul>
+<li>Env: <code>DEX_MAX_SNAPSHOT_BYTES</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>48000</code></li>
+<li>Notes: Hard cap for stored snapshot JSON size.</li>
+</ul>
+</li>
+<li><code>snapshotIncludeInputKeys</code>
+<ul>
+<li>Env: <code>DEX_SNAPSHOT_INCLUDE_INPUT_KEYS</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Stores input key names (GET/POST/FILES), not values.</li>
+</ul>
+</li>
+<li><code>snapshotMaxKeys</code>
+<ul>
+<li>Env: <code>DEX_SNAPSHOT_MAX_KEYS</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>200</code></li>
+<li>Notes: Max keys per input group (GET/POST/FILES).</li>
+</ul>
+</li>
+<li><code>snapshotIncludeHeaders</code>
+<ul>
+<li>Env: <code>DEX_SNAPSHOT_INCLUDE_HEADERS</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Stores request headers in snapshot (sensitive headers are excluded).</li>
+</ul>
+</li>
+<li><code>snapshotHeaderAllowlist</code>
+<ul>
+<li>Env: <code>DEX_SNAPSHOT_HEADER_ALLOWLIST</code></li>
+<li>Type: <code>array</code></li>
+<li>Default: <code>[]</code></li>
+<li>Notes: If provided, only these header names are included (case-insensitive).</li>
+</ul>
+</li>
+</ul>
 <h2 id="noise-controls--internal-traffic">Noise controls &amp; internal traffic</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Option</th>
-          <th>Env</th>
-          <th style="text-align: right">Type</th>
-          <th>Default</th>
-          <th>Notes</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>maxOccurrencesPerMinute</code></td>
-          <td><code>DEX_MAX_OCCURRENCES_PER_MINUTE</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>30</code></td>
-          <td>Rate limit per fingerprint per minute. Set <code>0</code> to disable.</td>
-      </tr>
-      <tr>
-          <td><code>ignoreSelfRoutes</code></td>
-          <td><code>DEX_IGNORE_SELF_ROUTES</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Ignores DEX UI routes so DEX doesn’t record itself.</td>
-      </tr>
-      <tr>
-          <td><code>ignorePathPrefixes</code></td>
-          <td><code>DEX_IGNORE_PATH_PREFIXES</code></td>
-          <td style="text-align: right">array</td>
-          <td><code>[]</code></td>
-          <td>Path prefixes to ignore (e.g. <code>[&quot;/health&quot;, &quot;/metrics&quot;]</code>).</td>
-      </tr>
-      <tr>
-          <td><code>botUserAgentBlocklist</code></td>
-          <td><code>DEX_BOT_USER_AGENT_BLOCKLIST</code></td>
-          <td style="text-align: right">array</td>
-          <td><em>(built-in list)</em></td>
-          <td>If the request UA contains one of these tokens, DEX won’t run.</td>
-      </tr>
-      <tr>
-          <td><code>ignoreNamespaces</code></td>
-          <td><code>DEX_IGNORE_NAMESPACES</code></td>
-          <td style="text-align: right">array</td>
-          <td><code>[&quot;Dex\\\\&quot;]</code></td>
-          <td>Exceptions originating from these namespaces won’t be captured.</td>
-      </tr>
-  </tbody>
-</table>
+<ul>
+<li><code>maxOccurrencesPerMinute</code>
+<ul>
+<li>Env: <code>DEX_MAX_OCCURRENCES_PER_MINUTE</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>30</code></li>
+<li>Notes: Rate limit per fingerprint per minute. Set <code>0</code> to disable.</li>
+</ul>
+</li>
+<li><code>ignoreSelfRoutes</code>
+<ul>
+<li>Env: <code>DEX_IGNORE_SELF_ROUTES</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Ignores DEX UI routes so DEX doesn’t record itself.</li>
+</ul>
+</li>
+<li><code>ignorePathPrefixes</code>
+<ul>
+<li>Env: <code>DEX_IGNORE_PATH_PREFIXES</code></li>
+<li>Type: <code>array</code></li>
+<li>Default: <code>[]</code></li>
+<li>Notes: Path prefixes to ignore (e.g. <code>[&quot;/health&quot;, &quot;/metrics&quot;]</code>).</li>
+</ul>
+</li>
+<li><code>botUserAgentBlocklist</code>
+<ul>
+<li>Env: <code>DEX_BOT_USER_AGENT_BLOCKLIST</code></li>
+<li>Type: <code>array</code></li>
+<li>Default: <em>(built-in list)</em></li>
+<li>Notes: If the request UA contains one of these tokens, DEX won’t run.</li>
+</ul>
+</li>
+<li><code>ignoreNamespaces</code>
+<ul>
+<li>Env: <code>DEX_IGNORE_NAMESPACES</code></li>
+<li>Type: <code>array</code></li>
+<li>Default: <code>[&quot;Dex\\\\&quot;]</code></li>
+<li>Notes: Exceptions originating from these namespaces won’t be captured.</li>
+</ul>
+</li>
+</ul>
 <h2 id="breadcrumbs-spans-and-lifecycle-timeline">Breadcrumbs, spans, and lifecycle timeline</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Option</th>
-          <th>Env</th>
-          <th style="text-align: right">Type</th>
-          <th>Default</th>
-          <th>Notes</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>captureLifecycle</code></td>
-          <td><code>DEX_CAPTURE_LIFECYCLE</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Enables the lifecycle timeline collection.</td>
-      </tr>
-      <tr>
-          <td><code>maxLifecycleItems</code></td>
-          <td><code>DEX_MAX_LIFECYCLE_ITEMS</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>220</code></td>
-          <td>Caps the number of lifecycle items stored per request.</td>
-      </tr>
-      <tr>
-          <td><code>maxLifecycleBytes</code></td>
-          <td><code>DEX_MAX_LIFECYCLE_BYTES</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>128000</code></td>
-          <td>Hard cap for stored lifecycle JSON size.</td>
-      </tr>
-      <tr>
-          <td><code>maxLifecycleItemDataBytes</code></td>
-          <td><code>DEX_MAX_LIFECYCLE_ITEM_DATA_BYTES</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>6000</code></td>
-          <td>Caps the size of per-item metadata before storing.</td>
-      </tr>
-      <tr>
-          <td><code>slowRequestMs</code></td>
-          <td><code>DEX_SLOW_REQUEST_MS</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>1000</code></td>
-          <td>Marks stored requests as “slow” when duration meets/exceeds this threshold.</td>
-      </tr>
-      <tr>
-          <td><code>slowQueryMs</code></td>
-          <td><code>DEX_SLOW_QUERY_MS</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>100</code></td>
-          <td>Marks DB queries as “slow” in the lifecycle timeline.</td>
-      </tr>
-      <tr>
-          <td><code>maxSqlLength</code></td>
-          <td><code>DEX_MAX_SQL_LENGTH</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>4000</code></td>
-          <td>Trims captured SQL strings to this many characters.</td>
-      </tr>
-      <tr>
-          <td><code>captureBreadcrumbs</code></td>
-          <td><code>DEX_CAPTURE_BREADCRUMBS</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Enables breadcrumbs.</td>
-      </tr>
-      <tr>
-          <td><code>captureSpans</code></td>
-          <td><code>DEX_CAPTURE_SPANS</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Enables spans.</td>
-      </tr>
-      <tr>
-          <td><code>captureCiLifecycle</code></td>
-          <td><code>DEX_CAPTURE_CI_LIFECYCLE</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Enables CI lifecycle checkpoints/spans (route matched, controller span, etc.).</td>
-      </tr>
-      <tr>
-          <td><code>captureCiLifecycleBreadcrumbs</code></td>
-          <td><code>DEX_CAPTURE_CI_LIFECYCLE_BREADCRUMBS</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Adds a breadcrumb for certain CI events.</td>
-      </tr>
-  </tbody>
-</table>
+<ul>
+<li><code>captureLifecycle</code>
+<ul>
+<li>Env: <code>DEX_CAPTURE_LIFECYCLE</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Enables the lifecycle timeline collection.</li>
+</ul>
+</li>
+<li><code>maxLifecycleItems</code>
+<ul>
+<li>Env: <code>DEX_MAX_LIFECYCLE_ITEMS</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>220</code></li>
+<li>Notes: Caps the number of lifecycle items stored per request.</li>
+</ul>
+</li>
+<li><code>maxLifecycleBytes</code>
+<ul>
+<li>Env: <code>DEX_MAX_LIFECYCLE_BYTES</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>128000</code></li>
+<li>Notes: Hard cap for stored lifecycle JSON size.</li>
+</ul>
+</li>
+<li><code>maxLifecycleItemDataBytes</code>
+<ul>
+<li>Env: <code>DEX_MAX_LIFECYCLE_ITEM_DATA_BYTES</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>6000</code></li>
+<li>Notes: Caps the size of per-item metadata before storing.</li>
+</ul>
+</li>
+<li><code>slowRequestMs</code>
+<ul>
+<li>Env: <code>DEX_SLOW_REQUEST_MS</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>1000</code></li>
+<li>Notes: Marks stored requests as “slow” when duration meets/exceeds this threshold.</li>
+</ul>
+</li>
+<li><code>slowQueryMs</code>
+<ul>
+<li>Env: <code>DEX_SLOW_QUERY_MS</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>100</code></li>
+<li>Notes: Marks DB queries as “slow” in the lifecycle timeline.</li>
+</ul>
+</li>
+<li><code>maxSqlLength</code>
+<ul>
+<li>Env: <code>DEX_MAX_SQL_LENGTH</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>4000</code></li>
+<li>Notes: Trims captured SQL strings to this many characters.</li>
+</ul>
+</li>
+<li><code>captureBreadcrumbs</code>
+<ul>
+<li>Env: <code>DEX_CAPTURE_BREADCRUMBS</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Enables breadcrumbs.</li>
+</ul>
+</li>
+<li><code>captureSpans</code>
+<ul>
+<li>Env: <code>DEX_CAPTURE_SPANS</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Enables spans.</li>
+</ul>
+</li>
+<li><code>captureCiLifecycle</code>
+<ul>
+<li>Env: <code>DEX_CAPTURE_CI_LIFECYCLE</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Enables CI lifecycle checkpoints/spans (route matched, controller span, etc.).</li>
+</ul>
+</li>
+<li><code>captureCiLifecycleBreadcrumbs</code>
+<ul>
+<li>Env: <code>DEX_CAPTURE_CI_LIFECYCLE_BREADCRUMBS</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Adds a breadcrumb for certain CI events.</li>
+</ul>
+</li>
+</ul>
 
 <div class="callout callout-info">
   <div class="callout-icon">
@@ -820,160 +782,143 @@
 </div>
 
 <h2 id="redaction--scrubbing">Redaction / scrubbing</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Option</th>
-          <th>Env</th>
-          <th style="text-align: right">Type</th>
-          <th>Default</th>
-          <th>Notes</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>scrubFields</code></td>
-          <td><code>DEX_SCRUB_FIELDS</code></td>
-          <td style="text-align: right">array</td>
-          <td><em>(password/token list)</em></td>
-          <td>Field names that will be redacted from stored payloads and snapshots.</td>
-      </tr>
-  </tbody>
-</table>
+<ul>
+<li><code>scrubFields</code>
+<ul>
+<li>Env: <code>DEX_SCRUB_FIELDS</code></li>
+<li>Type: <code>array</code></li>
+<li>Default: <em>(password/token list)</em></li>
+<li>Notes: Field names that will be redacted from stored payloads and snapshots.</li>
+</ul>
+</li>
+</ul>
 <h2 id="occurrence-http-context">Occurrence HTTP context</h2>
-<table>
-  <thead>
-      <tr>
-          <th>Option</th>
-          <th>Env</th>
-          <th style="text-align: right">Type</th>
-          <th>Default</th>
-          <th>Notes</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>captureHttpOnError</code></td>
-          <td><code>DEX_CAPTURE_HTTP_ON_ERROR</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Captures compact HTTP context when an exception is stored.</td>
-      </tr>
-      <tr>
-          <td><code>captureRequestHeadersOnError</code></td>
-          <td><code>DEX_CAPTURE_REQUEST_HEADERS_ON_ERROR</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>false</code></td>
-          <td>When enabled, includes request headers in occurrence HTTP context.</td>
-      </tr>
-      <tr>
-          <td><code>maxCapturedHeaders</code></td>
-          <td><code>DEX_MAX_CAPTURED_HEADERS</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>40</code></td>
-          <td>Max headers stored when header capture is enabled.</td>
-      </tr>
-      <tr>
-          <td><code>maxCapturedHeaderValueLength</code></td>
-          <td><code>DEX_MAX_CAPTURED_HEADER_VALUE_LENGTH</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>800</code></td>
-          <td>Trims header values to this length.</td>
-      </tr>
-  </tbody>
-</table>
+<ul>
+<li><code>captureHttpOnError</code>
+<ul>
+<li>Env: <code>DEX_CAPTURE_HTTP_ON_ERROR</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Captures compact HTTP context when an exception is stored.</li>
+</ul>
+</li>
+<li><code>captureRequestHeadersOnError</code>
+<ul>
+<li>Env: <code>DEX_CAPTURE_REQUEST_HEADERS_ON_ERROR</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>false</code></li>
+<li>Notes: When enabled, includes request headers in occurrence HTTP context.</li>
+</ul>
+</li>
+<li><code>maxCapturedHeaders</code>
+<ul>
+<li>Env: <code>DEX_MAX_CAPTURED_HEADERS</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>40</code></li>
+<li>Notes: Max headers stored when header capture is enabled.</li>
+</ul>
+</li>
+<li><code>maxCapturedHeaderValueLength</code>
+<ul>
+<li>Env: <code>DEX_MAX_CAPTURED_HEADER_VALUE_LENGTH</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>800</code></li>
+<li>Notes: Trims header values to this length.</li>
+</ul>
+</li>
+</ul>
 <h2 id="data-purging-retention">Data purging (retention)</h2>
 <p>DEX includes a purge job you can run via CLI: <code>php spark dex:purge</code>.</p>
-<table>
-  <thead>
-      <tr>
-          <th>Option</th>
-          <th>Env</th>
-          <th style="text-align: right">Type</th>
-          <th>Default</th>
-          <th>Notes</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>purgeEnabled</code></td>
-          <td><code>DEX_PURGE_ENABLED</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Enables the purge job.</td>
-      </tr>
-      <tr>
-          <td><code>purgeBatchSize</code></td>
-          <td><code>DEX_PURGE_BATCH_SIZE</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>500</code></td>
-          <td>Delete batch size (per loop).</td>
-      </tr>
-      <tr>
-          <td><code>purgeMaxRuntimeSeconds</code></td>
-          <td><code>DEX_PURGE_MAX_RUNTIME_SECONDS</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>20</code></td>
-          <td>Safety cap for one purge run.</td>
-      </tr>
-      <tr>
-          <td><code>purgeRetentionDaysRequests</code></td>
-          <td><code>DEX_PURGE_RETENTION_DAYS_REQUESTS</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>14</code></td>
-          <td>TTL for request rows.</td>
-      </tr>
-      <tr>
-          <td><code>purgeRetentionDaysOccurrences</code></td>
-          <td><code>DEX_PURGE_RETENTION_DAYS_OCCURRENCES</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>30</code></td>
-          <td>TTL for occurrences.</td>
-      </tr>
-      <tr>
-          <td><code>purgeRetentionDaysIssues</code></td>
-          <td><code>DEX_PURGE_RETENTION_DAYS_ISSUES</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>90</code></td>
-          <td>TTL for issues.</td>
-      </tr>
-      <tr>
-          <td><code>purgeMaxRowsRequests</code></td>
-          <td><code>DEX_PURGE_MAX_ROWS_REQUESTS</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>100000</code></td>
-          <td>Row cap safety net (keeps newest rows).</td>
-      </tr>
-      <tr>
-          <td><code>purgeMaxRowsOccurrences</code></td>
-          <td><code>DEX_PURGE_MAX_ROWS_OCCURRENCES</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>200000</code></td>
-          <td>Row cap safety net (keeps newest rows).</td>
-      </tr>
-      <tr>
-          <td><code>purgeMaxRowsIssues</code></td>
-          <td><code>DEX_PURGE_MAX_ROWS_ISSUES</code></td>
-          <td style="text-align: right">int</td>
-          <td><code>50000</code></td>
-          <td>Row cap safety net (keeps newest rows).</td>
-      </tr>
-      <tr>
-          <td><code>purgeUseDbLock</code></td>
-          <td><code>DEX_PURGE_USE_DB_LOCK</code></td>
-          <td style="text-align: right">bool</td>
-          <td><code>true</code></td>
-          <td>Use DB-level lock to avoid concurrent purges.</td>
-      </tr>
-      <tr>
-          <td><code>purgeDbLockName</code></td>
-          <td><code>DEX_PURGE_DB_LOCK_NAME</code></td>
-          <td style="text-align: right">string</td>
-          <td><code>dex_purge</code></td>
-          <td>Lock name used by the purge job.</td>
-      </tr>
-  </tbody>
-</table>
+<ul>
+<li><code>purgeEnabled</code>
+<ul>
+<li>Env: <code>DEX_PURGE_ENABLED</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Enables the purge job.</li>
+</ul>
+</li>
+<li><code>purgeBatchSize</code>
+<ul>
+<li>Env: <code>DEX_PURGE_BATCH_SIZE</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>500</code></li>
+<li>Notes: Delete batch size (per loop).</li>
+</ul>
+</li>
+<li><code>purgeMaxRuntimeSeconds</code>
+<ul>
+<li>Env: <code>DEX_PURGE_MAX_RUNTIME_SECONDS</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>20</code></li>
+<li>Notes: Safety cap for one purge run.</li>
+</ul>
+</li>
+<li><code>purgeRetentionDaysRequests</code>
+<ul>
+<li>Env: <code>DEX_PURGE_RETENTION_DAYS_REQUESTS</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>14</code></li>
+<li>Notes: TTL for request rows.</li>
+</ul>
+</li>
+<li><code>purgeRetentionDaysOccurrences</code>
+<ul>
+<li>Env: <code>DEX_PURGE_RETENTION_DAYS_OCCURRENCES</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>30</code></li>
+<li>Notes: TTL for occurrences.</li>
+</ul>
+</li>
+<li><code>purgeRetentionDaysIssues</code>
+<ul>
+<li>Env: <code>DEX_PURGE_RETENTION_DAYS_ISSUES</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>90</code></li>
+<li>Notes: TTL for issues.</li>
+</ul>
+</li>
+<li><code>purgeMaxRowsRequests</code>
+<ul>
+<li>Env: <code>DEX_PURGE_MAX_ROWS_REQUESTS</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>100000</code></li>
+<li>Notes: Row cap safety net (keeps newest rows).</li>
+</ul>
+</li>
+<li><code>purgeMaxRowsOccurrences</code>
+<ul>
+<li>Env: <code>DEX_PURGE_MAX_ROWS_OCCURRENCES</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>200000</code></li>
+<li>Notes: Row cap safety net (keeps newest rows).</li>
+</ul>
+</li>
+<li><code>purgeMaxRowsIssues</code>
+<ul>
+<li>Env: <code>DEX_PURGE_MAX_ROWS_ISSUES</code></li>
+<li>Type: <code>int</code></li>
+<li>Default: <code>50000</code></li>
+<li>Notes: Row cap safety net (keeps newest rows).</li>
+</ul>
+</li>
+<li><code>purgeUseDbLock</code>
+<ul>
+<li>Env: <code>DEX_PURGE_USE_DB_LOCK</code></li>
+<li>Type: <code>bool</code></li>
+<li>Default: <code>true</code></li>
+<li>Notes: Use DB-level lock to avoid concurrent purges.</li>
+</ul>
+</li>
+<li><code>purgeDbLockName</code>
+<ul>
+<li>Env: <code>DEX_PURGE_DB_LOCK_NAME</code></li>
+<li>Type: <code>string</code></li>
+<li>Default: <code>dex_purge</code></li>
+<li>Notes: Lock name used by the purge job.</li>
+</ul>
+</li>
+</ul>
 
       </div>
 

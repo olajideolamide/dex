@@ -24,12 +24,7 @@
 
     <nav class="header-nav" id="headerNav">
       
-        <a href="/docs/" class="nav-link" >
-          Docs
-          
-        </a>
-      
-        <a href="https://github.com/dex/dex" class="nav-link" target="_blank" rel="noopener">
+        <a href="https://github.com/olajideolamide/dex" class="nav-link" target="_blank" rel="noopener">
           GitHub
           
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -38,7 +33,7 @@
           
         </a>
       
-        <a href="https://packagist.org/packages/dex/dex" class="nav-link" target="_blank" rel="noopener">
+        <a href="https://packagist.org/packages/olajideolamide/dex" class="nav-link" target="_blank" rel="noopener">
           Packagist
           
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -485,14 +480,12 @@
 <li><strong>Defaults</strong> in the package config class</li>
 <li><strong><code>DEX_*</code> environment variables</strong> (from <code>.env</code>, server env, Docker, etc.)</li>
 </ol>
-<p>There is no required “publish config” step — if you can set an environment variable, you can configure DEX.</p>
 <h2 id="naming">Naming</h2>
 <p>Each config property maps to an environment variable using this rule:</p>
 <ul>
 <li><code>routePrefix</code> → <code>DEX_ROUTE_PREFIX</code></li>
 <li><code>captureShutdownFatals</code> → <code>DEX_CAPTURE_SHUTDOWN_FATALS</code></li>
 </ul>
-<p>You’ll find a full reference on the next page.</p>
 <h2 id="types-and-casting">Types and casting</h2>
 <p>DEX casts environment values based on the default property type:</p>
 <ul>

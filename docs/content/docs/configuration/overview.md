@@ -13,16 +13,12 @@ DEX reads its configuration from two places, in this order:
 1. **Defaults** in the package config class
 2. **`DEX_*` environment variables** (from `.env`, server env, Docker, etc.)
 
-There is no required “publish config” step — if you can set an environment variable, you can configure DEX.
-
 ## Naming
 
 Each config property maps to an environment variable using this rule:
 
 - `routePrefix` → `DEX_ROUTE_PREFIX`
 - `captureShutdownFatals` → `DEX_CAPTURE_SHUTDOWN_FATALS`
-
-You’ll find a full reference on the next page.
 
 ## Types and casting
 

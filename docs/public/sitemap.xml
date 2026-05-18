@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/docs/getting-started/introduction/</loc>
+  </url><url>
     <loc>http://localhost:1313/docs/getting-started/installation/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/getting-started/quickstart/</loc>
@@ -27,12 +29,6 @@
     <loc>http://localhost:1313/docs/dashboard/issue-detail/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/dashboard/search-filtering/</loc>
-  </url><url>
-    <loc>http://localhost:1313/docs/api-reference/issues/</loc>
-  </url><url>
-    <loc>http://localhost:1313/docs/api-reference/events/</loc>
-  </url><url>
-    <loc>http://localhost:1313/docs/api-reference/stats/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/advanced/custom-fingerprinting/</loc>
   </url><url>
@@ -64,8 +60,6 @@
   </url><url>
     <loc>http://localhost:1313/docs/advanced/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/api-reference/</loc>
-  </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/configuration/</loc>
@@ -79,8 +73,6 @@
     <loc>http://localhost:1313/docs/getting-started/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/helpers/</loc>
-  </url><url>
-    <loc>http://localhost:1313/docs/getting-started/introduction/</loc>
   </url><url>
     <loc>http://localhost:1313/docs/security/</loc>
   </url><url>
