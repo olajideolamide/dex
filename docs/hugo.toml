@@ -2,6 +2,7 @@ baseURL = "https://www.dexphp.com/documentation/"
 languageCode = "en-us"
 title = "DEX Documentation"
 theme = ""
+disableKinds = ["sitemap"]
 
 [params]
   description = "Open-source issue tracker and request monitor for CodeIgniter 4"
