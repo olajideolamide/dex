@@ -1103,7 +1103,7 @@ code { font-family: var(--font-mono); }
   .toc { display: none; }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 860px) { 
   .docs-layout {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -1141,6 +1141,10 @@ code { font-family: var(--font-mono); }
   .footer-links { gap: 40px; }
 
   .search-shortcut { display: none; }
+} 
+
+@media (min-width: 861px) {
+  .home-layout .docs-sidebar { display: none; }
 }
 
 @media (max-width: 560px) {
