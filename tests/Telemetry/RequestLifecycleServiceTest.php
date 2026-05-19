@@ -121,8 +121,6 @@ final class RequestLifecycleServiceTest extends TestCase
             'maxLifecycleItems' => 220,
             'maxLifecycleItemDataBytes' => 6000,
             'slowQueryMs' => 100,
-            'duplicateQueryThreshold' => 2,
-            'nPlusOneQueryThreshold' => 10,
         ], $overrides);
     }
 

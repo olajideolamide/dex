@@ -72,27 +72,16 @@ class Dex extends BaseConfig
      | Storage + tracing
      | ------------------------------------------------------------------------- */
     public string $storage = 'database';
-
     public bool $captureBreadcrumbs = true;
-    public int $maxBreadcrumbs = 50;
-
     public bool $captureSpans = true;
-    public int $maxSpans = 60;
-
     public bool $captureLifecycle = true;
     public int $maxLifecycleItems = 220;
     public int $maxLifecycleBytes = 128000;
     public int $maxLifecycleItemDataBytes = 6000;
     public int $slowRequestMs = 1000;
     public int $slowQueryMs = 100;
-    public int $duplicateQueryThreshold = 3;
-    public int $nPlusOneQueryThreshold = 10;
-
     public bool $captureCiLifecycleBreadcrumbs = true;
     public bool $captureCiLifecycle = true;
-    public int $maxLifecycleMarkers = 80;
-
-    public bool $breadcrumbDbQueries = true;
     public int $maxSqlLength = 4000;
 
     /* -------------------------------------------------------------------------

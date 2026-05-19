@@ -1,0 +1,38 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="{{ "/" | relURL }}documentation" class="logo">
+        <img
+          src="{{ "images/logo.png" | relURL }}"
+          class="logo-image logo-image--footer"
+          alt="DEX"
+          width="100"
+          height="36"
+          loading="lazy"
+          decoding="async"
+        >
+
+      </a>
+      <p>Open-source issue tracking for CodeIgniter 4.<br>MIT Licensed | Built by <a href="https://github.com/olajideolamide" target="_blank" rel="noopener">Olajide</a>.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Documentation</h4>
+        <a href="{{ "getting-started/installation/" | relURL }}">Installation</a>
+        <a href="{{ "configuration/basic/" | relURL }}">Configuration</a>
+        <a href="{{ "dashboard/overview/" | relURL }}">Dashboard</a>
+        <a href="{{ "security/overview/" | relURL }}">Security</a>
+      </div>
+      <div class="footer-col">
+        <h4>Community</h4>
+        <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
+        <a href="{{ .Site.Params.packagist }}" target="_blank" rel="noopener">Packagist</a>
+        <a href="{{ .Site.Params.github }}/issues" target="_blank" rel="noopener">Discussions</a>
+        <a href="{{ .Site.Params.github }}/issues" target="_blank" rel="noopener">Report a Bug</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; {{ now.Year }} DEX. All rights reserved.</p>
+  </div>
+</footer>

@@ -1,0 +1,101 @@
+{{ define "main" }}
+<main class="home">
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v12M1 7h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        v{{ .Site.Params.version }} Documentation
+      </div>
+      <h1>DEX <span class="text-gradient">Documentation</span></h1>
+      <p class="hero-desc">Learn how to install, configure, and use DEX, the open-source issue tracking library for CodeIgniter 4. From quick start to advanced usage.</p>
+      <div class="hero-actions">
+        <a href="{{ "getting-started/installation/" | relURL }}" class="btn btn-primary">
+          Get Started
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-cards">
+    <div class="cards-grid">
+      <a href="{{ "getting-started/installation/" | relURL }}" class="home-card">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 16V2M6 10l6 6 6-6M2 20h20"/></svg>
+        </div>
+        <h3>Installation</h3>
+        <p>Install DEX via Composer and get up and running in under 5 minutes.</p>
+        <span class="card-link">Read guide -></span>
+      </a>
+
+      <a href="{{ "getting-started/quickstart/" | relURL }}" class="home-card">
+      <div class="card-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
+      <h3>Quick Start</h3>
+      <p>Three steps. That's all it takes to start tracking issues.</p>
+      <span class="card-link">Start now -></span>
+      </a>
+
+      <a href="{{ "configuration/basic/" | relURL }}" class="home-card">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <h3>Configuration</h3>
+        <p>Customize capture, routing, retention, and production behavior.</p>
+        <span class="card-link">Explore options -></span>
+      </a>
+
+      <a href="{{ "dashboard/overview/" | relURL }}" class="home-card">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3>Dashboard</h3>
+        <p>Navigate the self-hosted dashboard to triage and debug issues.</p>
+        <span class="card-link">See dashboard -></span>
+      </a>
+
+      <a href="{{ "security/overview/" | relURL }}" class="home-card">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        </div>
+        <h3>Security</h3>
+        <p>Lock down the dashboard and run DEX safely in production.</p>
+        <span class="card-link">Review hardening -></span>
+      </a>
+
+      <a href="{{ "advanced/custom-fingerprinting/" | relURL }}" class="home-card">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Advanced</h3>
+        <p>Fingerprinting, regressions, scrubbing, and practical extension points.</p>
+        <span class="card-link">Go deeper -></span>
+      </a>
+
+
+    </div>
+  </section>
+
+  <section class="home-install">
+    <div class="install-inner">
+      <h2>Install in seconds</h2>
+      <div class="install-code">
+        <div class="code-header">
+          <span class="code-dot"></span>
+          <span class="code-dot"></span>
+          <span class="code-dot"></span>
+          <span class="code-title">Terminal</span>
+        </div>
+        <pre><code><span class="code-prompt">$</span> composer require olajideolamide/dex
+<span class="code-prompt">$</span> php spark migrate --all
+<span class="code-comment"># Open http://your-app.test/dex</span></code></pre>
+      </div>
+    </div>
+  </section>
+</main>
+{{ end }}

@@ -1,0 +1,40 @@
+baseURL = "https://www.dexphp.com/documentation/"
+languageCode = "en-us"
+title = "DEX Documentation"
+theme = ""
+
+[params]
+  description = "Open-source issue tracker and request monitor for CodeIgniter 4"
+  github = "https://github.com/olajideolamide/dex"
+  packagist = "https://packagist.org/packages/olajideolamide/dex"
+  website = "https://www.dexphp.com"
+  primaryColor = "#DD4814"
+  version = "1.0"
+
+[menu]
+  [[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/olajideolamide/dex"
+    weight = 1
+    [menu.main.params]
+      external = true
+  [[menu.main]]
+    name = "Packagist"
+    url = "https://packagist.org/packages/olajideolamide/dex"
+    weight = 2
+    [menu.main.params]
+      external = true
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+    guessSyntax = true
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML"]
+  page = ["HTML"]

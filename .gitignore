@@ -9,6 +9,7 @@ phpunit
 build/
 phpunit*.xml
 AGENTS.md
+docs/public
 
 # Ignore environment files
 .env

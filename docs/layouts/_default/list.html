@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="docs-layout">
+  {{ partial "sidebar.html" . }}
+  <main class="docs-main">
+    <div class="docs-content">
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
+
+      {{ $children := .Pages.ByWeight }}
+      {{ if $children }}
+      <div class="section-list">
+        {{ range $children }}
+        <a href="{{ .RelPermalink }}" class="section-card">
+          <h3>{{ .Title }}</h3>
+          <p>{{ .Description }}</p>
+        </a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </main>
+</div>
+{{ end }}
