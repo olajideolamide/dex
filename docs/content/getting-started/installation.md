@@ -50,10 +50,10 @@ http://your-app.test/<routePrefix>
 ```
 
 {{< callout type="warning" >}}
-In `production`, the dashboard is blocked by default. To enable it safely, read the [Security Overview](/security/overview/) first.
+In `production`, the dashboard is blocked by default. To enable it safely, read the [Security Overview]({{< relref "security/overview.md" >}})
 {{< /callout >}}
 
 ## Next steps
 
-- [Quick Start](/getting-started/quickstart/) — Trigger a test exception and see it in the dashboard
-- [Configuration Overview](/configuration/overview/) — Learn how to configure DEX using `DEX_*` environment variables
+- [Quick Start]({{< relref "getting-started/quickstart.md" >}}) — Trigger a test exception and see it in the dashboard
+- [Configuration Overview]({{< relref "configuration/overview.md" >}}) — Learn how to configure DEX using `DEX_*` environment variables

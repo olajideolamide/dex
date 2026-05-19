@@ -64,5 +64,5 @@ DEX then echoes the ID back on the response header so you can correlate browser/
 
 ## Next steps
 
-- [Configuration Overview](/configuration/overview/) — Learn how to configure DEX using `DEX_*` environment variables
-- [Securing DEX](/security/overview/) — Recommended production hardening (allowlists, stealth deny, reverse proxy)
+- [Configuration Overview]({{< relref "configuration/overview.md" >}}) — Learn how to configure DEX using `DEX_*` environment variables
+- [Securing DEX]({{< relref "security/overview.md" >}}) — Recommended production hardening (allowlists, stealth deny, reverse proxy)

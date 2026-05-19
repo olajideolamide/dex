@@ -12,7 +12,7 @@ This guide walks you through capturing a test exception with DEX and viewing it 
 
 If you haven’t installed DEX yet, follow the installation guide:
 
-- [Installation](/getting-started/installation/)
+- [Installation]({{< relref "getting-started/installation.md" >}})
 
 ## Step 2: Trigger a test exception
 
@@ -60,6 +60,6 @@ If the same fingerprint appears again later, DEX reopens it as a regression (`re
 
 ## What’s next
 
-- [How DEX Works](/getting-started/how-dex-works/) — Understand what’s stored and when
-- [Configuration Overview](/configuration/overview/) — Configure DEX using `DEX_*` environment variables
-- [Security Overview](/security/overview/) — Production hardening guide
+- [How DEX Works]({{< relref "getting-started/how-dex-works.md" >}}) — Understand what’s stored and when
+- [Configuration Overview]({{< relref "configuration/overview.md" >}}) — Configure DEX using `DEX_*` environment variables
+- [Security Overview]({{< relref "security/overview.md" >}}) — Production hardening guide

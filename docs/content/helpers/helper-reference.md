@@ -8,10 +8,10 @@ DEX ships helper functions in `src/Helpers/dex_helper.php` (loaded via `helper('
 
 This page is a quick reference for signatures and intent. For usage patterns, see:
 
-- [Helpers Overview](/helpers/overview/)
-- [Breadcrumbs](/helpers/breadcrumbs/)
-- [Spans](/helpers/spans/)
-- [Capturing Exceptions](/helpers/capturing-exceptions/)
+- [Helpers Overview]({{< relref "helpers/overview.md" >}})
+- [Breadcrumbs]({{< relref "helpers/breadcrumbs.md" >}})
+- [Spans]({{< relref "helpers/spans.md" >}})
+- [Capturing Exceptions]({{< relref "helpers/capturing-exceptions.md" >}})
 
 ## Configuration & routing
 
