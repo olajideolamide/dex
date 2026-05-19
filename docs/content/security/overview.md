@@ -24,5 +24,5 @@ Out of the box, DEX is conservative:
 
 ## Next steps
 
-- [Protecting the Dashboard](/security/protecting-the-dashboard/) — Allowlists, stealth deny, and production enablement
-- [PII & Data Handling](/security/pii-and-data-handling/) — Scrubbing strategy and what to avoid storing
+- [Protecting the Dashboard]({{< relref "security/protecting-the-dashboard.md" >}}) — Allowlists, stealth deny, and production enablement
+- [PII & Data Handling]({{< relref "security/pii-and-data-handling.md" >}}) — Scrubbing strategy and what to avoid storing

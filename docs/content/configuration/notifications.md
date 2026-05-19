@@ -68,5 +68,5 @@ php spark dex:purge --no-lock
 
 ## Next steps
 
-- [Configuration Reference](/configuration/config-reference/) — Purge config options and defaults
-- [Security Overview](/security/overview/) — Why retention and access control matter
+- [Configuration Reference]({{< relref "configuration/config-reference.md" >}}) — Purge config options and defaults
+- [Security Overview]({{< relref "security/overview.md" >}}) — Why retention and access control matter

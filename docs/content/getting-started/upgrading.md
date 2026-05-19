@@ -30,4 +30,4 @@ DEX is meant to be backwards-compatible, but major versions may change behavior 
 
 If a new version adds configuration options, you can set them via `DEX_*` environment variables:
 
-- [Configuration Reference](/configuration/config-reference/)
+- [Configuration Reference]({{< relref "configuration/config-reference.md" >}}) — To see a complete reference for every DEX configuration option.

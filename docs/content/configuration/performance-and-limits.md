@@ -44,5 +44,5 @@ If you want to drastically reduce stored request detail, consider:
 
 ## Next steps
 
-- [Configuration Reference](/configuration/config-reference/) — All config options
-- [Data Scrubbing](/advanced/data-scrubbing/) — Redaction rules and privacy tips
+- [Configuration Reference]({{< relref "configuration/config-reference.md" >}}) — All config options
+- [Data Scrubbing]({{< relref "advanced/data-scrubbing.md" >}}) — Redaction rules and privacy tips

@@ -50,5 +50,5 @@ DEX_UI_ALLOWLIST=10.0.0.0/8,192.168.0.0/16
 
 ## Next steps
 
-- [Configuration Reference](/configuration/config-reference/) — Every supported config option (defaults, types, examples)
-- [Securing DEX](/security/overview/) — Production hardening guide
+- [Configuration Reference]({{< relref "configuration/config-reference.md" >}}) — Every supported config option.
+- [Securing DEX]({{< relref "security/overview.md" >}}) — Production hardening guide

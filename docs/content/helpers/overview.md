@@ -18,7 +18,7 @@ Use helpers when you want to:
 
 ## Next steps
 
-- [Capturing Exceptions](/helpers/capturing-exceptions/) — `dex_capture_exception()`
-- [Breadcrumbs](/helpers/breadcrumbs/) — `dex_breadcrumb()`
-- [Spans](/helpers/spans/) — `dex_span_start()`, `dex_span_finish()`, `dex_span()`
-- [Helper Reference](/helpers/helper-reference/) — Quick signatures and behavior notes
+- [Capturing Exceptions]({{< relref "helpers/capturing-exceptions.md" >}}) — `dex_capture_exception()`
+- [Breadcrumbs]({{< relref "helpers/breadcrumbs.md" >}}) — `dex_breadcrumb()`
+- [Spans]({{< relref "helpers/spans.md" >}}) — `dex_span_start()`, `dex_span_finish()`, `dex_span()`
+- [Helper Reference]({{< relref "helpers/helper-reference.md" >}}) — Quick signatures and behavior notes

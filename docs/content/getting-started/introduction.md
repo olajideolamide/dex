@@ -47,5 +47,5 @@ If you need a full APM with distributed tracing and metrics, DEX can still be us
 
 ## Next Steps
 
-- [Installation](/getting-started/installation/) — Install DEX and run the installer
-- [Quick Start](/getting-started/quickstart/) — Trigger a test exception and see it in the dashboard
+- [Installation]({{< relref "getting-started/installation.md" >}}) — Install DEX and run the installer
+- [Quick Start]({{< relref "getting-started/quickstart.md" >}}) — Trigger a test exception and see it in the dashboard

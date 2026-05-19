@@ -8,7 +8,7 @@ This page covers the most common configuration tweaks you’ll make after instal
 
 If you want the full list of options, see:
 
-- [Configuration Reference](/configuration/config-reference/)
+- [Configuration Reference]({{< relref "configuration/config-reference.md" >}})
 
 ## Enable / disable DEX
 
@@ -88,6 +88,6 @@ DEX_IGNORE_SELF_ROUTES=true
 
 ## Next steps
 
-- [Environments](/configuration/environments/) — Safe production enablement and per-environment settings
-- [Performance & Limits](/configuration/performance-and-limits/) — Reduce overhead and storage
-- [Purging & Retention](/configuration/notifications/) — Keep the DEX tables from growing forever
+- [Environments]({{< relref "configuration/environments.md" >}}) — Safe production enablement and per-environment settings
+- [Performance & Limits]({{< relref "configuration/performance-and-limits.md" >}}) — Reduce overhead and storage
+- [Purging & Retention]({{< relref "configuration/notifications.md" >}}) — Keep the DEX tables from growing forever

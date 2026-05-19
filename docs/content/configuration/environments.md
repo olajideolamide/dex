@@ -26,7 +26,7 @@ DEX_ALLOW_IN_PRODUCTION=true
 ```
 
 {{< callout type="warning" >}}
-Only enable DEX UI in production if you also configure a strict allowlist. See [Protecting the Dashboard](/security/protecting-the-dashboard/).
+Only enable DEX UI in production if you also configure a strict allowlist. See [Protecting the Dashboard]({{< relref "security/protecting-the-dashboard.md" >}}).
 {{< /callout >}}
 
 ## A practical pattern
@@ -47,5 +47,5 @@ DEX_UI_ALLOWLIST=10.0.0.0/8,203.0.113.10
 
 ## Next steps
 
-- [Security Overview](/security/overview/) — Production hardening checklist
-- [Configuration Reference](/configuration/config-reference/) — All options and env keys
+- [Security Overview]({{< relref "security/overview.md" >}}) — Production hardening checklist
+- [Configuration Reference]({{< relref "configuration/config-reference.md" >}}) — All options and env keys

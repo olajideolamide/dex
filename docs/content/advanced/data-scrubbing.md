@@ -51,5 +51,5 @@ If you don’t need headers for debugging, keep occurrence header capture off (d
 
 ## Next steps
 
-- [PII & Data Handling](/documentation/security/pii-and-data-handling/) — Production-safe defaults and retention tips
-- [Configuration Reference](/documentation/configuration/config-reference/) — All config options
+- [PII & Data Handling]({{< relref "security/pii-and-data-handling.md" >}}) — Production-safe defaults and retention tips
+- [Configuration Reference]({{< relref "configuration/config-reference.md" >}}) — All config options

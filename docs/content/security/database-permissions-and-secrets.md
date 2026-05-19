@@ -18,7 +18,7 @@ In most CodeIgniter applications, DEX uses the same database connection as your 
 
 Shorter retention reduces blast radius:
 
-- [Purging & Retention](/configuration/notifications/)
+- [Purging & Retention]({{< relref "configuration/notifications.md" >}})
 
 If you handle sensitive data, consider lowering:
 
@@ -37,4 +37,4 @@ Before enabling DEX UI in production:
 
 See:
 
-- [PII & Data Handling](/security/pii-and-data-handling/)
+- [PII & Data Handling]({{< relref "security/pii-and-data-handling.md" >}})

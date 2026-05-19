@@ -1,5 +1,7 @@
 {{ define "main" }}
-<main class="home">
+<div class="home-layout">
+  {{ partial "sidebar.html" . }}
+  <main class="home">
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-badge">
@@ -97,5 +99,6 @@
       </div>
     </div>
   </section>
-</main>
+  </main>
+</div>
 {{ end }}
