@@ -137,11 +137,19 @@ code { font-family: var(--font-mono); }
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0px;
   color: var(--text-primary);
   font-weight: 700;
   font-size: 1.1rem;
   flex-shrink: 0;
+}
+.logo-image {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+.logo-image--footer {
+  height: 22px;
 }
 .logo:hover { color: var(--text-primary); }
 .logo-text { letter-spacing: 0.04em; }

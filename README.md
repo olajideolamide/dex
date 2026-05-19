@@ -5,7 +5,7 @@
 <h1 align="center">DEX</h1>
 
 <p align="center">
-    An open-source issue tracker and request monitor for CodeIgniter 4 applications.
+    An open-source, self-hosted issue tracker and request monitor for CodeIgniter 4 applications.
 </p>
 
 <p align="center">
@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-    <a href="https://www.dexphp.com/docs">Get Started</a>
+    <a href="https://www.dexphp.com/documentation">Get Started</a>
     <span>&nbsp;|&nbsp;</span>
     <a href="https://example.com">Demo</a>
     <span>&nbsp;|&nbsp;</span>

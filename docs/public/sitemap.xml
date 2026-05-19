@@ -2,80 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/docs/getting-started/introduction/</loc>
+    <loc>https://www.dexphp.com/documentation/getting-started/introduction/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/getting-started/installation/</loc>
+    <loc>https://www.dexphp.com/documentation/getting-started/installation/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/getting-started/quickstart/</loc>
+    <loc>https://www.dexphp.com/documentation/getting-started/quickstart/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/getting-started/how-dex-works/</loc>
+    <loc>https://www.dexphp.com/documentation/getting-started/how-dex-works/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/getting-started/upgrading/</loc>
+    <loc>https://www.dexphp.com/documentation/getting-started/upgrading/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/configuration/overview/</loc>
+    <loc>https://www.dexphp.com/documentation/configuration/overview/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/configuration/basic/</loc>
+    <loc>https://www.dexphp.com/documentation/configuration/basic/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/configuration/environments/</loc>
+    <loc>https://www.dexphp.com/documentation/configuration/environments/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/configuration/notifications/</loc>
+    <loc>https://www.dexphp.com/documentation/configuration/notifications/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/configuration/config-reference/</loc>
+    <loc>https://www.dexphp.com/documentation/configuration/config-reference/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/configuration/performance-and-limits/</loc>
+    <loc>https://www.dexphp.com/documentation/configuration/performance-and-limits/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/dashboard/overview/</loc>
+    <loc>https://www.dexphp.com/documentation/dashboard/overview/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/dashboard/issue-detail/</loc>
+    <loc>https://www.dexphp.com/documentation/dashboard/issue-detail/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/dashboard/search-filtering/</loc>
+    <loc>https://www.dexphp.com/documentation/dashboard/search-filtering/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/advanced/custom-fingerprinting/</loc>
+    <loc>https://www.dexphp.com/documentation/advanced/custom-fingerprinting/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/advanced/regression-detection/</loc>
+    <loc>https://www.dexphp.com/documentation/advanced/regression-detection/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/advanced/data-scrubbing/</loc>
+    <loc>https://www.dexphp.com/documentation/advanced/data-scrubbing/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/advanced/extending/</loc>
+    <loc>https://www.dexphp.com/documentation/helpers/overview/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/helpers/overview/</loc>
+    <loc>https://www.dexphp.com/documentation/helpers/capturing-exceptions/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/helpers/capturing-exceptions/</loc>
+    <loc>https://www.dexphp.com/documentation/helpers/breadcrumbs/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/helpers/breadcrumbs/</loc>
+    <loc>https://www.dexphp.com/documentation/helpers/spans/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/helpers/spans/</loc>
+    <loc>https://www.dexphp.com/documentation/helpers/helper-reference/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/helpers/helper-reference/</loc>
+    <loc>https://www.dexphp.com/documentation/security/overview/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/security/overview/</loc>
+    <loc>https://www.dexphp.com/documentation/security/protecting-the-dashboard/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/security/protecting-the-dashboard/</loc>
+    <loc>https://www.dexphp.com/documentation/security/reverse-proxy-https-headers/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/security/reverse-proxy-https-headers/</loc>
+    <loc>https://www.dexphp.com/documentation/security/database-permissions-and-secrets/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/security/database-permissions-and-secrets/</loc>
+    <loc>https://www.dexphp.com/documentation/security/pii-and-data-handling/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/security/pii-and-data-handling/</loc>
+    <loc>https://www.dexphp.com/documentation/advanced/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/advanced/</loc>
+    <loc>https://www.dexphp.com/documentation/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://www.dexphp.com/documentation/configuration/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/configuration/</loc>
+    <loc>https://www.dexphp.com/documentation/dashboard/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/dashboard/</loc>
+    <loc>https://www.dexphp.com/documentation/</loc>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://www.dexphp.com/documentation/getting-started/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/</loc>
+    <loc>https://www.dexphp.com/documentation/helpers/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/getting-started/</loc>
+    <loc>https://www.dexphp.com/documentation/security/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/helpers/</loc>
-  </url><url>
-    <loc>http://localhost:1313/docs/security/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://www.dexphp.com/documentation/tags/</loc>
   </url>
 </urlset>

@@ -1,4 +1,4 @@
-{{ $pages := (where .Site.RegularPages "Section" "docs").ByWeight }}
+{{ $pages := .Site.RegularPages.ByWeight }}
 {{ $currentIndex := -1 }}
 {{ range $i, $p := $pages }}
   {{ if eq $.RelPermalink $p.RelPermalink }}

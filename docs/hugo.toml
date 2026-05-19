@@ -1,4 +1,4 @@
-baseURL = "https://www.dexphp.com/"
+baseURL = "https://www.dexphp.com/documentation/"
 languageCode = "en-us"
 title = "DEX Documentation"
 theme = ""

@@ -1,11 +1,15 @@
 <header class="site-header">
   <div class="header-inner">
-    <a href="{{ "/" | relURL }}" class="logo">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" rx="6" fill="#DD4814"/>
-        <text x="16" y="22" text-anchor="middle" font-family="'DM Sans', sans-serif" font-weight="800" font-size="16" fill="white">D</text>
-      </svg>
-      <span class="logo-text">DEX <span class="logo-docs">docs</span></span>
+    <a href="{{ "/" | relURL }}documentation" class="logo">
+      <img
+        src="{{ "images/logo.png" | relURL }}"
+        class="logo-image"
+        alt="DEX"
+        width="100"
+        height="36"
+        decoding="async"
+      >
+      <span class="logo-text"><span class="logo-docs">docs</span></span>
     </a>
 
     <nav class="header-nav" id="headerNav">
