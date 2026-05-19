@@ -51,5 +51,5 @@ If you don’t need headers for debugging, keep occurrence header capture off (d
 
 ## Next steps
 
-- [PII & Data Handling](/security/pii-and-data-handling/) — Production-safe defaults and retention tips
-- [Configuration Reference](/configuration/config-reference/) — All config options
+- [PII & Data Handling](/documentation/security/pii-and-data-handling/) — Production-safe defaults and retention tips
+- [Configuration Reference](/documentation/configuration/config-reference/) — All config options
