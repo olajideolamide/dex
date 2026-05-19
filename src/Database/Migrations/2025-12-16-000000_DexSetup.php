@@ -43,7 +43,7 @@ class DexSetup extends Migration
         $this->forge->addField([
             'id'          => ['type' => 'BIGINT', 'unsigned' => true, 'auto_increment' => true],
             'issue_id'    => ['type' => 'BIGINT', 'unsigned' => true],
-            'request_id'  => ['type' => 'VARCHAR', 'constraint' => 80, 'null' => true],
+            'request_id'  => ['type' => 'VARCHAR', 'constraint' => 200, 'null' => true],
             'happened_at' => ['type' => 'DATETIME'],
             'message'     => ['type' => 'TEXT'],
             'context'     => ['type' => 'LONGTEXT', 'null' => true],
@@ -58,7 +58,7 @@ class DexSetup extends Migration
         // dex_requests
         $this->forge->addField([
             'id'          => ['type' => 'BIGINT', 'unsigned' => true, 'auto_increment' => true],
-            'request_id'  => ['type' => 'VARCHAR', 'constraint' => 80],
+            'request_id'  => ['type' => 'VARCHAR', 'constraint' => 200],
             'method'      => ['type' => 'VARCHAR', 'constraint' => 10],
             'path'        => ['type' => 'VARCHAR', 'constraint' => 255],
             'status_code' => ['type' => 'SMALLINT', 'null' => true],
@@ -82,7 +82,6 @@ class DexSetup extends Migration
             'created_at'  => ['type' => 'DATETIME'],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->addKey('request_id');
         $this->forge->addUniqueKey('request_id');
         $this->forge->addKey('created_at');
         $this->forge->addKey('slow_request', false, false, 'idx_dex_requests_slow_request');
