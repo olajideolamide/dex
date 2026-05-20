@@ -21,6 +21,15 @@ class Dex extends BaseConfig
     public bool $enabled = true;
     public string $routePrefix = 'dex';
     public bool $allowInProduction = false;
+
+    /**
+     * Optional exact-match IP allowlist for UI access.
+     *
+     * Deprecated: use `uiAllowlist` instead (supports exact IPs and CIDR ranges).
+     * Kept for backward compatibility and will be removed in a future major release.
+     *
+     * @deprecated Use $uiAllowlist instead.
+     */
     public array $allowedIPs = [];
     public string $requestIdHeader = 'X-Request-Id';
 

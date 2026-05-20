@@ -55,6 +55,7 @@ class DexUiFilter implements FilterInterface
 
         $ip = method_exists($request, 'getIPAddress') ? (string) $request->getIPAddress() : '';
 
+        // Deprecated: prefer uiAllowlist (IPs/CIDR). Kept for backward compatibility.
         if (! empty($cfg->allowedIPs) && ! in_array($ip, (array) $cfg->allowedIPs, true)) {
             return $this->deny($cfg);
         }

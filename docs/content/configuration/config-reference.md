@@ -49,7 +49,7 @@ All options are optional — if you don’t set an environment variable, DEX use
   - Env: `DEX_ALLOWED_IPS`
   - Type: `array`
   - Default: `[]`
-  - Notes: Optional exact-match IP allowlist. If non-empty, the client IP must be in this list **and** pass `uiAllowlist`.
+  - Notes: Optional exact-match IP allowlist. If non-empty, the client IP must be in this list **and** pass `uiAllowlist`. **Deprecated:** use `uiAllowlist` instead. This will be removed in a future major release.
 - `uiStealthDeny`
   - Env: `DEX_UI_STEALTH_DENY`
   - Type: `bool`
