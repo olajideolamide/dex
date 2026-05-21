@@ -14,7 +14,7 @@
                 <?php endif; ?>
             </p>
         </div>
-        
+
 
         <div class="d-flex gap-3 mb-4" id="statCards">
             <div class="stat-card">
