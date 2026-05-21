@@ -1,24 +1,23 @@
-parameters:
+﻿parameters:
 	ignoreErrors:
 		-
 			message: '#^Using nullsafe method call on non\-nullable type CodeIgniter\\Cache\\CacheInterface\. Use \-\> instead\.$#'
 			identifier: nullsafe.neverNull
 			count: 2
 			path: src/Adapters/CiCacheStore.php
-
-
+\n\n\n\n\n\n\n\n\n\n\n
 		-
 			message: '#^Negated boolean expression is always false\.$#'
 			identifier: booleanNot.alwaysFalse
 			count: 1
 			path: src/Adapters/CiRequestPathProvider.php
-
+\n
 		-
 			message: '#^Call to function is_array\(\) with array will always evaluate to true\.$#'
 			identifier: function.alreadyNarrowedType
 			count: 1
 			path: src/Adapters/CiRouterInfoProvider.php
-
+\n\n\n\n\n
 		-
 			message: '#^Property Dex\\Config\\Dex\:\:\$purgeBatchSize \(int\) on left side of \?\? is not nullable\.$#'
 			identifier: nullCoalesce.property
@@ -54,7 +53,7 @@ parameters:
 			identifier: nullCoalesce.property
 			count: 1
 			path: src/Config/Routes.php
-
+\n
 		-
 			message: '#^Expression on left side of \?\? is not nullable\.$#'
 			identifier: nullCoalesce.expr
@@ -72,7 +71,7 @@ parameters:
 			identifier: property.onlyWritten
 			count: 1
 			path: src/Dex.php
-
+\n
 		-
 			message: '#^Method Dex\\Filters\\DexUiFilter\:\:after\(\) should return CodeIgniter\\HTTP\\ResponseInterface\|null but return statement is missing\.$#'
 			identifier: return.missing
@@ -264,7 +263,7 @@ parameters:
 			identifier: identical.alwaysFalse
 			count: 1
 			path: src/Support/IpAllowList.php
-
+\n\n\n\n\n\n\n
 		-
 			message: '#^Offset 1 on array\{non\-falsy\-string, non\-empty\-string\} on left side of \?\? always exists and is not nullable\.$#'
 			identifier: nullCoalesce.offset

@@ -13,19 +13,24 @@ declare(strict_types=1);
 
 namespace Dex\Adapters;
 
+use CodeIgniter\HTTP\CLIRequest;
+use CodeIgniter\HTTP\IncomingRequest;
+use CodeIgniter\HTTP\RequestInterface;
 use Throwable;
 
 class CiHttpContextProvider
 {
     public function currentUserAgent(): ?string
     {
-        try {
-            $req = service('request');
-        } catch (Throwable) {
-            $req = null;
+        $req = $this->resolveRequest();
+
+        if ($req instanceof IncomingRequest) {
+            $userAgent = trim((string) $req->getUserAgent());
+
+            return $userAgent !== '' ? $userAgent : null;
         }
 
-        if (! $req || ! method_exists($req, 'getUserAgent')) {
+        if (! is_object($req) || ! is_callable([$req, 'getUserAgent'])) {
             return null;
         }
 
@@ -36,32 +41,43 @@ class CiHttpContextProvider
 
     public function build(bool $includeHeaders, int $maxHeaders, int $maxValueLen): array
     {
-        try {
-            $req = service('request');
-        } catch (Throwable) {
-            $req = null;
-        }
+        $req = $this->resolveRequest();
 
-        if (! $req) {
+        if ($req instanceof RequestInterface) {
+            $uri = $req->getUri();
+            $out = [
+                'method' => $req->getMethod(),
+                'path' => (string) $uri->getPath(),
+            ];
+
+            try {
+                $out['url'] = (string) $uri;
+                $out['query'] = (string) $uri->getQuery();
+            } catch (Throwable) {
+                // ignore
+            }
+        } elseif (
+            is_object($req)
+            && is_callable([$req, 'getMethod'])
+            && is_callable([$req, 'getUri'])
+        ) {
+            $uri = $req->getUri();
+            $out = [
+                'method' => $req->getMethod(),
+                'path' => is_object($uri) && is_callable([$uri, 'getPath']) ? (string) $uri->getPath() : null,
+            ];
+
+            try {
+                $out['url'] = (string) $uri;
+                $out['query'] = is_object($uri) && is_callable([$uri, 'getQuery']) ? (string) $uri->getQuery() : null;
+            } catch (Throwable) {
+                // ignore
+            }
+        } else {
             return [];
         }
 
-        $out = [
-            'method' => method_exists($req, 'getMethod') ? $req->getMethod() : null,
-            'path' => method_exists($req, 'getUri') ? (string) $req->getUri()->getPath() : null,
-        ];
-
-        try {
-            if (method_exists($req, 'getUri')) {
-                $uri = $req->getUri();
-                $out['url'] = method_exists($uri, '__toString') ? (string) $uri : null;
-                $out['query'] = method_exists($uri, 'getQuery') ? (string) $uri->getQuery() : null;
-            }
-        } catch (Throwable) {
-            // ignore
-        }
-
-        if (! $includeHeaders || ! method_exists($req, 'getHeaders')) {
+        if (! $includeHeaders) {
             return $out;
         }
 
@@ -69,11 +85,11 @@ class CiHttpContextProvider
         $i = 0;
 
         try {
-            foreach ($req->getHeaders() as $name => $hdr) {
+            foreach ($this->requestHeaders($req) as $name => $_header) {
                 if ($maxHeaders > 0 && $i >= $maxHeaders) {
                     break;
                 }
-                $line = method_exists($req, 'getHeaderLine') ? (string) $req->getHeaderLine($name) : (string) $hdr;
+                $line = (string) $req->getHeaderLine((string) $name);
                 if ($maxValueLen > 0 && mb_strlen($line) > $maxValueLen) {
                     $line = mb_substr($line, 0, $maxValueLen) . '...';
                 }
@@ -87,5 +103,35 @@ class CiHttpContextProvider
         $out['headers'] = $headers;
 
         return $out;
+    }
+
+    private function requestHeaders(object $request): array
+    {
+        if ($request instanceof IncomingRequest || $request instanceof CLIRequest) {
+            return $request->getHeaders();
+        }
+
+        if (is_callable([$request, 'headers'])) {
+            $headers = $request->headers();
+
+            return is_array($headers) ? $headers : [];
+        }
+
+        if (is_callable([$request, 'getHeaders'])) {
+            $headers = $request->getHeaders();
+
+            return is_array($headers) ? $headers : [];
+        }
+
+        return [];
+    }
+
+    private function resolveRequest()
+    {
+        try {
+            return service('request');
+        } catch (Throwable) {
+            return null;
+        }
     }
 }
