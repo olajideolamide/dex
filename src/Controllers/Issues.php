@@ -35,6 +35,8 @@ class Issues extends DexController
         $q = trim((string)$this->request->getGet('q'));
         $page = max(1, (int) ($this->request->getGet('page') ?? 1));
         $perPage = max(1, min(100, (int) ($this->request->getGet('per_page') ?? 25)));
+        $ciEnvironment = strtolower(trim((string) getenv('CI_ENVIRONMENT')));
+        $isDexRunningInProduction = $ciEnvironment === 'production';
 
         try {
             $data = $this->orchestrator->getIssuesData($status, $q, $page, $perPage);
@@ -43,6 +45,8 @@ class Issues extends DexController
                 'title' => 'Issues',
                 'dataUrl' => site_url(dex_route_prefix() . '/issues/data'),
                 'detailBaseUrl' => site_url(dex_route_prefix() . '/issues'),
+                'isDexRunningInProduction' => $isDexRunningInProduction,
+                'ciEnvironment' => $ciEnvironment,
             ]));
         } catch (DexException $e) {
             return view('Dex\\dex/error', [
@@ -81,7 +85,7 @@ class Issues extends DexController
             return view('Dex\\dex/issues_dialog_shell', array_merge($data, [
                 'dialogUrl' => site_url(dex_route_prefix() . '/issues/' . $id . '/dialog'),
                 'resolveUrl' => site_url(dex_route_prefix() . '/issues/' . $id . '/resolve'),
-                'ignoreUrl' => site_url(dex_route_prefix() . '/issues/' . $id . '/ignore'),
+                'ignoreUrl' => site_url(dex_route_prefix() . '/issues/' . $id . '/ignore')
             ]));
         } catch (IssueNotFoundException) {
             return $this->response->setStatusCode(404)->setBody('Issue not found');
