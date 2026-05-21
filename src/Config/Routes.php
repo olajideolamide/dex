@@ -26,7 +26,7 @@ $routes->group($prefix, [
     'namespace' => 'Dex\Controllers',
     'filter'    => 'dex-ui',
 ], static function ($routes) {
-    $routes->get('issues', 'Issues::index');
+    $routes->get('', 'Issues::index');
     $routes->get('issues/data', 'Issues::data');
     $routes->get('issues/(:num)/dialog', 'Issues::dialog/$1');
     $routes->get('issues/(:num)/dialog/event', 'Issues::dialogEvent/$1');
