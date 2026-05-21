@@ -120,7 +120,7 @@ $statusChipClass = match ($statusLabel) {
                 <div class="dex-stat">
                     <div class="dex-stat__label">Age</div>
                     <div class="dex-stat__value"><?= esc(dex_age($issue['first_seen'] ?? null)) ?></div>
-                    <div class="dex-stat__sub">first occurence &rarr; now </div>
+                    <div class="dex-stat__sub">first occurrence &rarr; now</div>
                 </div>
                 <div class="dex-stat">
                     <div class="dex-stat__label">Last seen</div>
