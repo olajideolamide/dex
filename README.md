@@ -21,7 +21,7 @@
 <p align="center">
     <a href="https://www.dexphp.com/documentation">Get Started</a>
     <span>&nbsp;|&nbsp;</span>
-    <a href="https://example.com">Demo</a>
+    <a href="https://dex.profusionlabs.org">Demo</a>
     <span>&nbsp;|&nbsp;</span>
     <a href="CONTRIBUTING.md">Contributing</a>
 </p>
