@@ -119,12 +119,12 @@ $statusChipClass = match ($statusLabel) {
                 </div>
                 <div class="dex-stat">
                     <div class="dex-stat__label">Age</div>
-                    <div class="dex-stat__value"><?= esc(dex_age($issue['first_seen'] ?? null, $issue['last_seen'] ?? null)) ?></div>
-                    <div class="dex-stat__sub">first → last occurrence</div>
+                    <div class="dex-stat__value"><?= esc(dex_age($issue['first_seen'] ?? null)) ?></div>
+                    <div class="dex-stat__sub">first occurence &rarr; now </div>
                 </div>
                 <div class="dex-stat">
                     <div class="dex-stat__label">Last seen</div>
-                    <div class="dex-stat__value" style="font-size:20px;"><?= esc(dex_time_ago($issue['last_seen'] ?? null)) ?></div>
+                    <div class="dex-stat__value"><?= esc(dex_time_ago($issue['last_seen'] ?? null)) ?></div>
                     <div class="dex-stat__sub"><?= esc(dex_format_datetime($issue['last_seen'] ?? null)) ?></div>
                 </div>
             </div>
