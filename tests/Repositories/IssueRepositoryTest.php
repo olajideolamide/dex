@@ -126,26 +126,30 @@ final class IssueRepositoryTest extends DexDatabaseTestCase
     public function testKeepsFirstSeenUnchanged(): void
     {
         $fp = 'fingerprint-first-seen';
-        $firstTime = '2025-01-01 00:00:00';
 
         $issueId = $this->repository->upsertIssue([
             'fingerprint' => $fp,
             'level'       => 'error',
             'title'       => 'Issue',
-            'first_seen'  => $firstTime,
         ]);
 
+        // Capture first_seen after the initial insert
+        $rowBefore = $this->db->table('dex_issues')->where('id', $issueId)->get()->getRowArray();
+        $this->assertNotNull($rowBefore);
+        $firstSeen = $rowBefore['first_seen'];
+
+        // Second upsert with the same fingerprint
         $this->repository->upsertIssue([
             'fingerprint' => $fp,
             'level'       => 'error',
             'title'       => 'Issue',
         ]);
 
-        $row = $this->db->table('dex_issues')->where('id', $issueId)->get()->getRowArray();
-        $this->assertNotNull($row);
-        
-        // first_seen must not change
-        $this->assertSame($firstTime, $row['first_seen']);
+        $rowAfter = $this->db->table('dex_issues')->where('id', $issueId)->get()->getRowArray();
+        $this->assertNotNull($rowAfter);
+
+        // first_seen must not change between upserts
+        $this->assertSame($firstSeen, $rowAfter['first_seen']);
     }
 
     public function testHandlesOpenIssue(): void

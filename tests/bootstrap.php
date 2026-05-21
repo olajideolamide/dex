@@ -35,7 +35,7 @@ if (getenv('CI_ENVIRONMENT') === false) {
 // Apply test database configuration (DB=SQLite3 or DB=MySQLi).
 // CI4's registrar auto-discovery is disabled in this test suite, so we apply it manually.
 if (class_exists(\CodeIgniter\Config\Factories::class)) {
-    $dbOverrides = \Dex\Tests\Support\Config\Registrar::Database();
+    $dbOverrides = \Dex\Tests\Support\Config\Registrar::database();
     $dbConfig = config(\Config\Database::class);
     foreach ($dbOverrides as $key => $value) {
         $dbConfig->$key = $value;

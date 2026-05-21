@@ -32,7 +32,7 @@ class Registrar
      *
      * @return array<string, mixed>
      */
-    public static function Database(): array
+    public static function database(): array
     {
         $driver = getenv('DB') ?: 'SQLite3';
 
