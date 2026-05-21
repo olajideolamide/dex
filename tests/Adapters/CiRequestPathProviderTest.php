@@ -6,13 +6,15 @@ namespace Dex\Tests\Adapters;
 
 use Config\Services;
 use Dex\Adapters\CiRequestPathProvider;
-use PHPUnit\Framework\TestCase;
+use Dex\Tests\Support\DexTestCase;
 
-final class CiRequestPathProviderTest extends TestCase
+final class CiRequestPathProviderTest extends DexTestCase
 {
     protected function tearDown(): void
     {
         Services::resetSingle('request');
+
+        parent::tearDown();
     }
 
     public function testCurrentPathReturnsRequestUriPath(): void

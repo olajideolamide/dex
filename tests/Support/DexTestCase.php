@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace Dex\Tests\Support;
 
+use CodeIgniter\Test\CIUnitTestCase;
+use Config\Services;
+use Dex\Config\Services as DexServices;
 use Dex\Support\ConfigResolver;
-use PHPUnit\Framework\TestCase;
 
-abstract class DexTestCase extends TestCase
+abstract class DexTestCase extends CIUnitTestCase
 {
     /**
      * @var list<string>
@@ -16,16 +18,19 @@ abstract class DexTestCase extends TestCase
 
     protected function setUp(): void
     {
-        parent::setUp();
-
+        $this->resetServices();
+        DexServices::reset();
         ConfigResolver::resetCache();
         $this->clearDexEnv();
+
+        parent::setUp();
     }
 
     protected function tearDown(): void
     {
         $this->clearDexEnv();
         ConfigResolver::resetCache();
+        DexServices::reset();
 
         parent::tearDown();
     }
@@ -34,7 +39,10 @@ abstract class DexTestCase extends TestCase
     {
         putenv($key . '=' . $value);
         $_ENV[$key] = $value;
+        Services::superglobals()->setServer($key, $value);
         $this->envKeys[] = $key;
+
+        ConfigResolver::resetCache();
     }
 
     private function clearDexEnv(): void
@@ -42,6 +50,7 @@ abstract class DexTestCase extends TestCase
         foreach (array_unique($this->envKeys) as $key) {
             putenv($key);
             unset($_ENV[$key]);
+            Services::superglobals()->unsetServer($key);
         }
 
         $this->envKeys = [];

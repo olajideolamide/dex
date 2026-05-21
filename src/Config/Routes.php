@@ -24,7 +24,7 @@ if ($prefix === '') {
 // Protected UI (must pass both access + UI-session)
 $routes->group($prefix, [
     'namespace' => 'Dex\Controllers',
-    'filter'    => 'dex-ui',
+    'filter'    => 'dexui',
 ], static function ($routes) {
     $routes->get('', 'Issues::index');
     $routes->get('issues/data', 'Issues::data');

@@ -6,13 +6,15 @@ namespace Dex\Tests\Adapters;
 
 use Config\Services;
 use Dex\Adapters\CiRouterInfoProvider;
-use PHPUnit\Framework\TestCase;
+use Dex\Tests\Support\DexTestCase;
 
-final class CiRouterInfoProviderTest extends TestCase
+final class CiRouterInfoProviderTest extends DexTestCase
 {
     protected function tearDown(): void
     {
         Services::resetSingle('router');
+
+        parent::tearDown();
     }
 
     public function testReturnsControllerInfoFromRouter(): void
