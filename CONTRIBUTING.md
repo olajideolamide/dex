@@ -5,7 +5,7 @@ Thanks for taking the time to contribute. DEX is a CodeIgniter 4-native monitori
 ## Quick Start
 
 - PHP: 8.2+
-- CodeIgniter: 4.3.5+
+- CodeIgniter: 4.6.2+
 - Install dependencies: `composer install`
 - Run tests: `composer test`
 - Run static analysis: `composer phpstan`

@@ -44,7 +44,7 @@ Use DEX to:
 DEX requires:
 
 - PHP 8.2+
-- CodeIgniter 4.3.5+
+- CodeIgniter 4.6.2+
 - Composer
 
 ## Screenshots

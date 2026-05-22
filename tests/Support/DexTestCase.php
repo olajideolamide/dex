@@ -50,8 +50,8 @@ abstract class DexTestCase extends CIUnitTestCase
         foreach (array_unique($this->envKeys) as $key) {
             putenv($key);
             unset($_ENV[$key]);
-            unset($_SERVER[$key]);
-            //Services::superglobals()->unsetServer($key);
+            //unset($_SERVER[$key]);
+            Services::superglobals()->unsetServer($key);
         }
 
         $this->envKeys = [];

@@ -1,4 +1,5 @@
 name: PHPStan
+run-name: "PHPStan on ${{ github.ref_name }} (${{ github.event_name }})"
 
 on:
   push:
@@ -11,7 +12,7 @@ permissions:
 
 jobs:
   phpstan:
-    name: "PHPStan / PHP ${{ matrix.php }} / ${{ matrix.dependencies }}"
+    name: "PHP ${{ matrix.php }} / ${{ matrix.dependencies }}"
     runs-on: ubuntu-latest
 
     strategy:

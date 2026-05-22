@@ -5,8 +5,8 @@ DEPENDENCIES="${1:-highest}"
 
 case "${DEPENDENCIES}" in
   lowest)
-    # Test against the minimum supported CI4 version, not just a generally low dependency set.
-    composer update --with codeigniter4/framework:4.3.5 --with-all-dependencies --prefer-lowest --prefer-stable --prefer-dist --no-interaction --no-progress
+    # Resolve the minimum supported dependency set from composer.json.
+    composer update --prefer-lowest --prefer-stable --prefer-dist --no-interaction --no-progress
     ;;
   highest)
     composer update --prefer-dist --no-interaction --no-progress

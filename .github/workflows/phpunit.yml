@@ -1,4 +1,5 @@
 name: PHPUnit
+run-name: "PHPUnit on ${{ github.ref_name }} (${{ github.event_name }})"
 
 on:
   push:
@@ -11,7 +12,7 @@ permissions:
 
 jobs:
   phpunit-sqlite:
-    name: "PHPUnit / SQLite3 / PHP ${{ matrix.php }} / ${{ matrix.dependencies }}"
+    name: "SQLite3 / PHP ${{ matrix.php }} / ${{ matrix.dependencies }}"
     runs-on: ubuntu-latest
 
     strategy:
@@ -49,7 +50,7 @@ jobs:
         run: composer test:sqlite
 
   phpunit-mysql:
-    name: "PHPUnit / MySQL 8 / PHP ${{ matrix.php }} / ${{ matrix.dependencies }}"
+    name: "MySQL 8 / PHP ${{ matrix.php }} / ${{ matrix.dependencies }}"
     runs-on: ubuntu-latest
 
     strategy:
@@ -108,7 +109,7 @@ jobs:
         run: composer test:mysql
 
   phpunit-mariadb:
-    name: "PHPUnit / MariaDB 10.11 / PHP ${{ matrix.php }} / ${{ matrix.dependencies }}"
+    name: "MariaDB 10.11 / PHP ${{ matrix.php }} / ${{ matrix.dependencies }}"
     runs-on: ubuntu-latest
 
     strategy:
@@ -167,7 +168,7 @@ jobs:
         run: composer test:mysql
 
   phpunit-future-php:
-    name: "PHPUnit / SQLite3 / PHP 8.5 / advisory"
+    name: "SQLite3 / PHP 8.5 / advisory"
     runs-on: ubuntu-latest
     continue-on-error: true
 
