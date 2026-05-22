@@ -527,7 +527,7 @@ final class IssueShowViewPrepService
             return null;
         }
 
-        $table = trim((string) ($matches[1] ?? ''), '`');
+        $table = trim($matches[1], '`');
 
         return $table !== '' ? $table : null;
     }
@@ -739,7 +739,7 @@ final class IssueShowViewPrepService
         ) {
             if (preg_match($pattern, $ua, $matches) === 1) {
                 $browser = $name;
-                $browserVersion = $matches[1] ?? null;
+                $browserVersion = $matches[1];
                 break;
             }
         }
