@@ -53,7 +53,7 @@ final class IssueFactory
      */
     public static function regressed(array $overrides = []): array
     {
-        return array_merge(self::base(), ['status' => 'regression'], $overrides);
+        return array_merge(self::base(), ['status' => 'regressed'], $overrides);
     }
 
     /**

@@ -67,7 +67,7 @@ final class RepeatedIssueJourneyTest extends DexDatabaseTestCase
         $firstSeen = $rowBefore['first_seen'];
 
         // Second occurrence — same fingerprint
-        sleep(0); // ensure no exact time collision
+
         $sameId = $this->issues->upsertIssue(array_merge($issueData, ['last_seen' => '2025-01-02 10:00:00']));
         $this->occurrences->recordOccurrence([
             'issue_id'    => $sameId,

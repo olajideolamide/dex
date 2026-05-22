@@ -12,9 +12,8 @@ final class CiCacheStoreTest extends DexTestCase
 {
     protected function tearDown(): void
     {
-        Services::resetSingle('cache');
-
         parent::tearDown();
+        Services::resetSingle('cache');
     }
 
     public function testGetAndSaveProxyToCacheService(): void
