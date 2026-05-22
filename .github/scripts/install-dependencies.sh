@@ -5,7 +5,9 @@ DEPENDENCIES="${1:-highest}"
 
 case "${DEPENDENCIES}" in
   lowest)
-    composer update --prefer-lowest --prefer-dist --no-interaction --no-progress
+    # Ensure a true "lowest" resolution (i.e., do not reuse a previously-generated lockfile).
+    rm -f composer.lock
+    composer update --prefer-lowest --prefer-stable --prefer-dist --no-interaction --no-progress
     ;;
   highest)
     composer update --prefer-dist --no-interaction --no-progress
