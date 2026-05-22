@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: ["main", "develop", "release/**"]
 
+permissions:
+  contents: read
+  actions: write
+
 jobs:
   # ─── 1. SQLite ──────────────────────────────────────────────────────────────
   phpunit-sqlite:
@@ -53,6 +57,9 @@ jobs:
   phpunit-mysql:
     name: "PHPUnit / MySQL 8 / PHP ${{ matrix.php }}"
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
     strategy:
       fail-fast: false
       matrix:
@@ -112,6 +119,9 @@ jobs:
   phpunit-mariadb:
     name: "PHPUnit / MariaDB / PHP ${{ matrix.php }}"
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
     strategy:
       fail-fast: false
       matrix:
