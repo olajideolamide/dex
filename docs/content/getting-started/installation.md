@@ -9,9 +9,9 @@ weight: 1
 Before installing DEX, make sure your environment meets these requirements:
 
 - **PHP** 8.2 or higher
-- **CodeIgniter 4** 4.5 or higher
+- **CodeIgniter 4.3.5 or higher
 - **Composer** 2.x
-- A database supported by CodeIgniter 4 (e.g. MySQL, PostgreSQL, SQLite)
+- A database supported by CodeIgniter 4 (e.g. MySQL, MariaDB, SQLite)
 
 ## Install via Composer
 

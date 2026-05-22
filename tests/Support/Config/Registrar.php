@@ -21,9 +21,6 @@ namespace Dex\Tests\Support\Config;
  * Usage:
  *   DB=SQLite3 composer test
  *   DB=MySQLi DB_HOST=127.0.0.1 DB_DATABASE=dex_test DB_USERNAME=root DB_PASSWORD=root composer test
- *
- * DB_SERVER=mysql or DB_SERVER=mariadb can be used for workflow readability,
- * but does NOT affect the CI4 driver — both use MySQLi.
  */
 class Registrar
 {
@@ -109,3 +106,4 @@ class Registrar
         ];
     }
 }
+

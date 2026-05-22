@@ -5,11 +5,47 @@ Thanks for taking the time to contribute. DEX is a CodeIgniter 4-native monitori
 ## Quick Start
 
 - PHP: 8.2+
-- CodeIgniter: 4.5 or 4.6
+- CodeIgniter: 4.3.5+
 - Install dependencies: `composer install`
 - Run tests: `composer test`
 - Run static analysis: `composer phpstan`
 - Run full QA (when needed): `composer qa:full`
+
+## Running tests
+
+Run the default test suite:
+
+```bash
+composer test
+```
+
+Run SQLite explicitly:
+
+```bash
+composer test:sqlite
+```
+
+Run MySQL/MariaDB explicitly:
+
+```bash
+DB=MySQLi \
+DB_HOST=127.0.0.1 \
+DB_PORT=3306 \
+DB_DATABASE=dex_test \
+DB_USERNAME=root \
+DB_PASSWORD=your_password \
+composer test
+```
+
+Before opening a compatibility-related pull request, test both dependency edges:
+
+```bash
+composer update --prefer-lowest --prefer-dist --no-interaction
+composer qa:full
+
+composer update --prefer-dist --no-interaction
+composer qa:full
+```
 
 ## Before You Open a PR
 
