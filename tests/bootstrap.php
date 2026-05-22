@@ -11,12 +11,10 @@
 
 declare(strict_types=1);
 
-// Ensure Composer autoload is available for both the library and CI4.
 require dirname(__DIR__) . '/vendor/autoload.php';
 
-// Optionally bootstrap CI4 only when explicitly requested.
 $ciBootstrap = dirname(__DIR__) . '/vendor/codeigniter4/framework/system/Test/bootstrap.php';
-if (is_file($ciBootstrap) && getenv('MINISENTRY_USE_CI_BOOTSTRAP') === '1') {
+if (is_file($ciBootstrap) && ! defined('ENVIRONMENT')) {
     require $ciBootstrap;
 }
 
@@ -25,9 +23,22 @@ if (! class_exists('Config\\Modules')) {
     class_alias(\Dex\Tests\Support\DexTestModules::class, 'Config\\Modules');
 }
 
-// Sensible defaults for tests when running inside another project.
 if (! defined('ENVIRONMENT')) {
     define('ENVIRONMENT', 'testing');
 }
 
-$_SERVER['CI_ENVIRONMENT'] = $_SERVER['CI_ENVIRONMENT'] ?? 'testing';
+if (getenv('CI_ENVIRONMENT') === false) {
+    putenv('CI_ENVIRONMENT=testing');
+    $_ENV['CI_ENVIRONMENT'] = 'testing';
+}
+
+// Apply test database configuration (DB=SQLite3 or DB=MySQLi).
+// CI4's registrar auto-discovery is disabled in this test suite, so we apply it manually.
+if (class_exists(\CodeIgniter\Config\Factories::class)) {
+    $dbOverrides = \Dex\Tests\Support\Config\Registrar::database();
+    $dbConfig = config(\Config\Database::class);
+    foreach ($dbOverrides as $key => $value) {
+        $dbConfig->$key = $value;
+    }
+    \CodeIgniter\Config\Factories::injectMock('config', 'Database', $dbConfig);
+}

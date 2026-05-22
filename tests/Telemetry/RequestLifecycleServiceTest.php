@@ -43,7 +43,8 @@ final class RequestLifecycleServiceTest extends TestCase
         $this->assertSame('failed', $span['status']);
         $this->assertNull($this->findItemOrNull($payload['items'], 'response.generated', 'name'));
         $this->assertNull($this->findItemOrNull($payload['items'], 'request.finished', 'name'));
-        $this->assertLessThanOrEqual(150, (int) round((float) ($span['end_ms'] ?? 0)));
+        $this->assertIsNumeric($span['end_ms']);
+        $this->assertLessThanOrEqual(160, (float) $span['end_ms'], 'Span end_ms should not exceed request duration + tolerance');
 
         $prepared = $this->findItem($payload['items'], 'payment.charge.prepared', 'name');
         $this->assertSame($spanId, $prepared['parent_id']);

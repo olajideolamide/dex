@@ -6,12 +6,13 @@ namespace Dex\Tests\Adapters;
 
 use Config\Services;
 use Dex\Adapters\CiCacheStore;
-use PHPUnit\Framework\TestCase;
+use Dex\Tests\Support\DexTestCase;
 
-final class CiCacheStoreTest extends TestCase
+final class CiCacheStoreTest extends DexTestCase
 {
     protected function tearDown(): void
     {
+        parent::tearDown();
         Services::resetSingle('cache');
     }
 

@@ -22,7 +22,7 @@ class Registrar
     {
         return [
             'aliases' => [
-                'dex-ui'     => DexUiFilter::class,
+                'dexui'      => DexUiFilter::class,
             ],
         ];
     }

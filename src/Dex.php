@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace Dex;
 
 use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\ResponseInterface;
 use Dex\Contracts\DexInterface;
 use Dex\Adapters\CiRequestMetaFactory;
@@ -184,7 +185,7 @@ class Dex implements DexInterface
      */
     public function finishRequest(ResponseInterface $response): void
     {
-        $status = method_exists($response, 'getStatusCode') ? (int)$response->getStatusCode() : 0;
+        $status = (int) $response->getStatusCode();
         $meta = new ResponseMeta($status);
 
         $meta = $this->finish($meta);
@@ -244,24 +245,20 @@ class Dex implements DexInterface
             $method = strtoupper((string) ($ctx['method'] ?? $request->getMethod() ?? ''));
 
             $queryKeys = [];
-            if (method_exists($request, 'getGet')) {
+            if ($request instanceof IncomingRequest) {
                 $get = $request->getGet();
-                if (is_array($get)) {
-                    $queryKeys = array_values(array_map('strval', array_keys($get)));
-                }
+                $queryKeys = array_values(array_map('strval', array_keys($get)));
             }
 
             $payloadKeys = [];
-            if ($method === 'POST' && method_exists($request, 'getPost')) {
+            if (! $request instanceof IncomingRequest) {
+                $payloadKeys = [];
+            } elseif ($method === 'POST') {
                 $post = $request->getPost();
-                if (is_array($post)) {
-                    $payloadKeys = array_values(array_map('strval', array_keys($post)));
-                }
-            } elseif (in_array($method, ['PUT', 'PATCH', 'DELETE'], true) && method_exists($request, 'getRawInput')) {
+                $payloadKeys = array_values(array_map('strval', array_keys($post)));
+            } elseif (in_array($method, ['PUT', 'PATCH', 'DELETE'], true)) {
                 $raw = $request->getRawInput();
-                if (is_array($raw)) {
-                    $payloadKeys = array_values(array_map('strval', array_keys($raw)));
-                }
+                $payloadKeys = array_values(array_map('strval', array_keys($raw)));
             }
 
             $ctx['_http_span_context'] = [

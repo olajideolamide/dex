@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Dex\Adapters;
 
+use CodeIgniter\Router\Router;
 use Dex\DTO\ControllerInfo;
 use Throwable;
 
@@ -20,39 +21,45 @@ final class CiRouterInfoProvider
 {
     public function getControllerInfo(): ControllerInfo
     {
-        try {
-            $router = service('router');
-        } catch (Throwable) {
-            $router = null;
+        $router = $this->resolveRouter();
+
+        if ($router instanceof Router) {
+            return $this->buildFromRouter($router);
         }
 
-        if (! $router) {
-            return new ControllerInfo(null, null, null, null, null);
+        if (
+            is_object($router)
+            && is_callable([$router, 'controllerName'])
+            && is_callable([$router, 'methodName'])
+        ) {
+            return $this->buildFromRouterLike($router);
         }
 
-        $controller = method_exists($router, 'controllerName') ? $router->controllerName() : null;
-        $action = method_exists($router, 'methodName') ? $router->methodName() : null;
+        return new ControllerInfo(null, null, null, null, null);
+    }
 
+    private function buildFromRouter(Router $router): ControllerInfo
+    {
+        $controller = $router->controllerName();
+        $action = $router->methodName();
         $route = null;
         $params = null;
         $routeOptions = null;
 
         try {
-            if (method_exists($router, 'getMatchedRoute')) {
-                $matched = $router->getMatchedRoute();
-                if (is_array($matched)) {
-                    $route = $matched[0] ?? null;
-                }
+            $matched = $router->getMatchedRoute();
+            if (is_array($matched)) {
+                $route = $matched[0] ?? null;
             }
-            if (method_exists($router, 'getMatchedRouteOptions')) {
-                $options = $router->getMatchedRouteOptions();
-                if (is_array($options)) {
-                    $routeOptions = $options;
-                }
+
+            $options = $router->getMatchedRouteOptions();
+            if (is_array($options)) {
+                $routeOptions = $options;
             }
-            if (method_exists($router, 'params')) {
-                $p = $router->params();
-                $params = is_array($p) ? $p : null;
+
+            $routeParams = $router->params();
+            if (is_array($routeParams)) {
+                $params = $routeParams;
             }
         } catch (Throwable) {
             // ignore
@@ -65,5 +72,56 @@ final class CiRouterInfoProvider
             $params,
             $routeOptions
         );
+    }
+
+    private function buildFromRouterLike(object $router): ControllerInfo
+    {
+        $controller = $router->controllerName();
+        $action = $router->methodName();
+        $route = null;
+        $params = null;
+        $routeOptions = null;
+
+        try {
+            if (is_callable([$router, 'getMatchedRoute'])) {
+                $matched = $router->getMatchedRoute();
+                if (is_array($matched)) {
+                    $route = $matched[0] ?? null;
+                }
+            }
+
+            if (is_callable([$router, 'getMatchedRouteOptions'])) {
+                $options = $router->getMatchedRouteOptions();
+                if (is_array($options)) {
+                    $routeOptions = $options;
+                }
+            }
+
+            if (is_callable([$router, 'params'])) {
+                $routeParams = $router->params();
+                if (is_array($routeParams)) {
+                    $params = $routeParams;
+                }
+            }
+        } catch (Throwable) {
+            // ignore
+        }
+
+        return new ControllerInfo(
+            $controller ? (string) $controller : null,
+            $action ? (string) $action : null,
+            $route ? (string) $route : null,
+            $params,
+            $routeOptions
+        );
+    }
+
+    private function resolveRouter()
+    {
+        try {
+            return service('router');
+        } catch (Throwable) {
+            return null;
+        }
     }
 }

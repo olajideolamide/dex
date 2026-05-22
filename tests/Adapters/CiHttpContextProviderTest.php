@@ -6,13 +6,15 @@ namespace Dex\Tests\Adapters;
 
 use Config\Services;
 use Dex\Adapters\CiHttpContextProvider;
-use PHPUnit\Framework\TestCase;
+use Dex\Tests\Support\DexTestCase;
 
-final class CiHttpContextProviderTest extends TestCase
+final class CiHttpContextProviderTest extends DexTestCase
 {
     protected function tearDown(): void
     {
         Services::resetSingle('request');
+
+        parent::tearDown();
     }
 
     public function testBuildWithoutHeaders(): void

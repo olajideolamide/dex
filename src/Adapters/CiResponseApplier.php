@@ -20,10 +20,6 @@ final class CiResponseApplier
 {
     public static function apply(ResponseInterface $response, ResponseMeta $meta): void
     {
-        if (! method_exists($response, 'setHeader')) {
-            return;
-        }
-
         foreach ($meta->headers() as $name => $value) {
             $response->setHeader($name, $value);
         }

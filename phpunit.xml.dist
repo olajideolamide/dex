@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
   bootstrap="tests/bootstrap.php"
+  backupGlobals="false"
+  beStrictAboutOutputDuringTests="true"
   colors="true"
   cacheDirectory=".phpunit.cache"
+  executionOrder="random"
+  failOnRisky="true"
+  failOnWarning="true"
 >
   <php>
-    <env name="MINISENTRY_USE_CI_BOOTSTRAP" value="1"/>
   </php>
   <testsuites>
     <testsuite name="Dex">

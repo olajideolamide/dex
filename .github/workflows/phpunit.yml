@@ -6,26 +6,38 @@ on:
   pull_request:
     branches: ["main", "develop", "release/**"]
 
+permissions:
+  contents: read
+  actions: write
+
 jobs:
-  phpunit:
+  # ─── 1. SQLite ──────────────────────────────────────────────────────────────
+  phpunit-sqlite:
+    name: "PHPUnit / SQLite3 / PHP ${{ matrix.php }}"
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        php: ["8.2", "8.3"]
+        php: ["8.2", "8.3", "8.4", "8.5"]
+    continue-on-error: ${{ matrix.php == '8.5' }}
+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+        uses: shivammathur/setup-php@7c071dfe9dc99bdf297fa79cb49ea005b9fcadbc # v2 (2.37.1)
         with:
           php-version: ${{ matrix.php }}
+          extensions: sqlite3, pdo_sqlite
           coverage: none
           tools: composer:v2
 
       - name: Cache Composer dependencies
-        uses: actions/cache@v4
+        if: github.event_name != 'pull_request'
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
         with:
           path: vendor
           key: ${{ runner.os }}-php-${{ matrix.php }}-composer-${{ hashFiles('**/composer.lock') }}
@@ -35,6 +47,138 @@ jobs:
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist --no-progress
 
-      - name: Run tests
+      - name: Create SQLite writable directory
+        run: mkdir -p writable/database
+
+      - name: Run tests (SQLite3)
+        env:
+          DB: SQLite3
         run: composer test
 
+  # ─── 2. MySQL 8 ─────────────────────────────────────────────────────────────
+  phpunit-mysql:
+    name: "PHPUnit / MySQL 8 / PHP ${{ matrix.php }}"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ["8.2", "8.3", "8.4", "8.5"]
+    continue-on-error: ${{ matrix.php == '8.5' }}
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_DATABASE: dex_test
+          MYSQL_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@7c071dfe9dc99bdf297fa79cb49ea005b9fcadbc # v2 (2.37.1)
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mysqli, pdo_mysql
+          coverage: none
+          tools: composer:v2
+
+      - name: Cache Composer dependencies
+        if: github.event_name != 'pull_request'
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ matrix.php }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-${{ matrix.php }}-composer-
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Run tests (MySQL 8)
+        env:
+          DB: MySQLi
+          DB_SERVER: mysql
+          DB_HOST: 127.0.0.1
+          DB_PORT: 3306
+          DB_DATABASE: dex_test
+          DB_USERNAME: root
+          DB_PASSWORD: root
+        run: composer test
+
+  # ─── 3. MariaDB ─────────────────────────────────────────────────────────────
+  phpunit-mariadb:
+    name: "PHPUnit / MariaDB / PHP ${{ matrix.php }}"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ["8.2", "8.3", "8.4", "8.5"]
+    continue-on-error: ${{ matrix.php == '8.5' }}
+
+    services:
+      mariadb:
+        image: mariadb:10.11
+        env:
+          MARIADB_DATABASE: dex_test
+          MARIADB_ROOT_PASSWORD: root
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="healthcheck.sh --connect --innodb_initialized"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@7c071dfe9dc99bdf297fa79cb49ea005b9fcadbc # v2 (2.37.1)
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mysqli, pdo_mysql
+          coverage: none
+          tools: composer:v2
+
+      - name: Cache Composer dependencies
+        if: github.event_name != 'pull_request'
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ matrix.php }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-${{ matrix.php }}-composer-
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist --no-progress
+
+      - name: Run tests (MariaDB)
+        env:
+          DB: MySQLi
+          DB_SERVER: mariadb
+          DB_HOST: 127.0.0.1
+          DB_PORT: 3306
+          DB_DATABASE: dex_test
+          DB_USERNAME: root
+          DB_PASSWORD: root
+        run: composer test

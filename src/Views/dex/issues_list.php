@@ -6,8 +6,15 @@
     <div class="page-wrap">
         <div class="mb-4">
             <h1 class="page-title">Issues</h1>
-            <p class="page-subtitle">Unique exceptions grouped by fingerprint. Each issue aggregates all matching events.</p>
+            <p class="page-subtitle">
+                <?php if (($isDexRunningInProduction ?? false) === true) : ?>
+                <span class="badge bg-orange"></span> Production mode - <abbr class="text-muted" title="Protect DEX in production: require login or restrict IPs. Learn more in the docs.">Secure DEX</abbr>
+                <?php else : ?>
+                <span class="badge bg-green"></span> <?= esc(ucfirst((string)($ciEnvironment ?? 'unknown'))) ?> mode
+                <?php endif; ?>
+            </p>
         </div>
+
 
         <div class="d-flex gap-3 mb-4" id="statCards">
             <div class="stat-card">

@@ -15,7 +15,9 @@ namespace Dex\Support;
 
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\HTTP\IncomingRequest;
 use Dex\DTO\ResponseMeta;
+use Throwable;
 
 /**
  * Item 15: CI4 request snapshot ("Debug Toolbar, but persisted")
@@ -48,12 +50,16 @@ class RequestSnapshot
         $query = null;
         $host = null;
         $scheme = null;
-        if ($req && method_exists($req, 'getUri')) {
-            $uri = $req->getUri();
-            $url = method_exists($uri, '__toString') ? (string) $uri : null;
-            $query = method_exists($uri, 'getQuery') ? (string) $uri->getQuery() : null;
-            $host = method_exists($uri, 'getHost') ? (string) $uri->getHost() : null;
-            $scheme = method_exists($uri, 'getScheme') ? (string) $uri->getScheme() : null;
+        if ($req) {
+            try {
+                $uri = $req->getUri();
+                $url = (string) $uri;
+                $query = (string) $uri->getQuery();
+                $host = (string) $uri->getHost();
+                $scheme = (string) $uri->getScheme();
+            } catch (Throwable) {
+                // ignore
+            }
         }
 
         $ciVersion = null;
@@ -96,7 +102,7 @@ class RequestSnapshot
                 'scheme' => $scheme,
                 'ip' => $ctx['ip'] ?? null,
                 'user_agent' => $ctx['user_agent'] ?? null,
-                'is_ajax' => $req && method_exists($req, 'isAJAX') ? (bool) $req->isAJAX() : null,
+                'is_ajax' => $req ? self::requestAjaxState($req) : null,
             ],
             'user' => [
                 'ip' => $ctx['ip'] ?? null,
@@ -187,25 +193,18 @@ class RequestSnapshot
     {
         $out = [];
 
-        // GET keys
-        if (method_exists($req, 'getGet')) {
-            $get = $req->getGet();
-            if (is_array($get)) {
-                $out['get'] = array_slice(array_keys($get), 0, $maxKeys);
-            }
+        $get = self::requestArray($req, 'getGet');
+        if ($get !== null) {
+            $out['get'] = array_slice(array_keys($get), 0, $maxKeys);
         }
 
-        // POST keys
-        if (method_exists($req, 'getPost')) {
-            $post = $req->getPost();
-            if (is_array($post)) {
-                $out['post'] = array_slice(array_keys($post), 0, $maxKeys);
-            }
+        $post = self::requestArray($req, 'getPost');
+        if ($post !== null) {
+            $out['post'] = array_slice(array_keys($post), 0, $maxKeys);
         }
 
-        // FILE keys (names only)
-        if (method_exists($req, 'getFiles')) {
-            $files = $req->getFiles();
+        $files = self::requestArray($req, 'getFiles');
+        if ($files !== null) {
             $out['files'] = array_slice(array_keys($files), 0, $maxKeys);
         }
 
@@ -214,7 +213,7 @@ class RequestSnapshot
 
     private static function headers(RequestInterface $req, object $config): array
     {
-        if (($config->snapshotIncludeHeaders ?? true) !== true || ! method_exists($req, 'getHeaders')) {
+        if (($config->snapshotIncludeHeaders ?? true) !== true) {
             return [];
         }
 
@@ -223,7 +222,7 @@ class RequestSnapshot
         $maxValueLength = max(80, (int) ($config->maxCapturedHeaderValueLength ?? 800));
         $headers = [];
 
-        foreach ($req->getHeaders() as $name => $header) {
+        foreach ($req->headers() as $name => $headerOrList) {
             $key = strtolower((string) $name);
             if ($allow !== [] && ! in_array($key, $allow, true)) {
                 continue;
@@ -232,9 +231,12 @@ class RequestSnapshot
                 continue;
             }
 
-            $value = is_object($header) && method_exists($header, 'getValueLine')
-                ? (string) $header->getValueLine()
-                : (string) $header;
+            $header = is_array($headerOrList) ? ($headerOrList[0] ?? null) : $headerOrList;
+            if (! is_object($header)) {
+                continue;
+            }
+
+            $value = (string) $header->getValueLine();
 
             $value = self::sanitizeHeaderValue((string) $name, $value);
             if ($value === '') {
@@ -316,7 +318,7 @@ class RequestSnapshot
 
         foreach ($names as $name) {
             $value = self::headerValue($headers, $name);
-            if ($value === null && $req && method_exists($req, 'getHeaderLine')) {
+            if ($value === null && $req) {
                 $value = trim((string) $req->getHeaderLine($name));
             }
 
@@ -374,7 +376,7 @@ class RequestSnapshot
 
     private static function serverValue(?RequestInterface $req, string $key): ?string
     {
-        if (! $req || ! method_exists($req, 'getServer')) {
+        if (! $req) {
             return null;
         }
 
@@ -388,6 +390,36 @@ class RequestSnapshot
         $value = ini_get($key);
 
         return $value === false ? null : (string) $value;
+    }
+
+    private static function requestAjaxState(RequestInterface $request): ?bool
+    {
+        if ($request instanceof IncomingRequest) {
+            return $request->isAJAX();
+        }
+
+        if (! is_callable([$request, 'isAJAX'])) {
+            return null;
+        }
+
+        return (bool) $request->isAJAX();
+    }
+
+    private static function requestArray(RequestInterface $request, string $method): ?array
+    {
+        if ($request instanceof IncomingRequest) {
+            $value = $request->{$method}();
+
+            return is_array($value) ? $value : null;
+        }
+
+        if (! is_callable([$request, $method])) {
+            return null;
+        }
+
+        $value = $request->{$method}();
+
+        return is_array($value) ? $value : null;
     }
 
     private static function parseUserAgent(string $ua): array

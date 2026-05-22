@@ -1,0 +1,307 @@
+﻿parameters:
+	ignoreErrors:
+		-
+			message: '#^Using nullsafe method call on non\-nullable type CodeIgniter\\Cache\\CacheInterface\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 2
+			path: src/Adapters/CiCacheStore.php
+\n\n\n\n\n\n\n\n\n\n\n
+		-
+			message: '#^Negated boolean expression is always false\.$#'
+			identifier: booleanNot.alwaysFalse
+			count: 1
+			path: src/Adapters/CiRequestPathProvider.php
+\n
+		-
+			message: '#^Call to function is_array\(\) with array will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/Adapters/CiRouterInfoProvider.php
+\n\n\n\n\n
+		-
+			message: '#^Property Dex\\Config\\Dex\:\:\$purgeBatchSize \(int\) on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.property
+			count: 1
+			path: src/Commands/Purge.php
+
+		-
+			message: '#^Property Dex\\Config\\Dex\:\:\$purgeEnabled \(bool\) on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.property
+			count: 1
+			path: src/Commands/Purge.php
+
+		-
+			message: '#^Property Dex\\Config\\Dex\:\:\$purgeMaxRuntimeSeconds \(int\) on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.property
+			count: 1
+			path: src/Commands/Purge.php
+
+		-
+			message: '#^Property Dex\\Config\\Dex\:\:\$purgeUseDbLock \(bool\) on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.property
+			count: 1
+			path: src/Commands/Purge.php
+
+		-
+			message: '#^Property Dex\\Config\\Dex\:\:\$captureCiLifecycleBreadcrumbs \(bool\) on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.property
+			count: 4
+			path: src/Config/Events.php
+
+		-
+			message: '#^Property Dex\\Config\\Dex\:\:\$routePrefix \(string\) on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.property
+			count: 1
+			path: src/Config/Routes.php
+\n
+		-
+			message: '#^Expression on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.expr
+			count: 1
+			path: src/Dex.php
+
+		-
+			message: '#^Parameter \#1 \$array \(list\<string\>\) of array_values is already a list, call has no effect\.$#'
+			identifier: arrayValues.list
+			count: 3
+			path: src/Dex.php
+
+		-
+			message: '#^Property Dex\\Dex\:\:\$storage is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/Dex.php
+\n
+		-
+			message: '#^Method Dex\\Filters\\DexUiFilter\:\:after\(\) should return CodeIgniter\\HTTP\\ResponseInterface\|null but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: src/Filters/DexUiFilter.php
+
+		-
+			message: '#^Property Dex\\Config\\Dex\:\:\$allowInProduction \(bool\) on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.property
+			count: 1
+			path: src/Filters/DexUiFilter.php
+
+		-
+			message: '#^Property Dex\\Config\\Dex\:\:\$uiAllowlist \(string\) on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.property
+			count: 1
+			path: src/Filters/DexUiFilter.php
+
+		-
+			message: '#^Property Dex\\Config\\Dex\:\:\$uiEnabled \(bool\) on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.property
+			count: 1
+			path: src/Filters/DexUiFilter.php
+
+		-
+			message: '#^Offset ''k'' on array\{k\: string, v\: mixed, mono\?\: bool, copy\?\: string\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: src/Helpers/dex_helper.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between non\-falsy\-string and '''' will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 2
+			path: src/Helpers/dex_helper.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between mixed and null will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: src/Helpers/dex_helper.php
+
+		-
+			message: '#^Offset ''environment'' on array\{fingerprint\: string, level\: string, class\: string, title\: string, status\: string, latest_path\: string, latest_method\: string, environment\: string, \.\.\.\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: src/Repositories/IssueRepository.php
+
+		-
+			message: '#^Offset ''id'' does not exist on array\{fingerprint\: string, level\: string, class\: string, title\: string, status\: string, latest_path\: string, latest_method\: string, environment\: string, \.\.\.\}\.$#'
+			identifier: offsetAccess.notFound
+			count: 2
+			path: src/Repositories/IssueRepository.php
+
+		-
+			message: '#^Offset ''latest_method'' on array\{fingerprint\: string, level\: string, class\: string, title\: string, status\: string, latest_path\: string, latest_method\: string, environment\: string, \.\.\.\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: src/Repositories/IssueRepository.php
+
+		-
+			message: '#^Property Dex\\Services\\Core\\DataPurgeService\:\:\$db on left side of \?\? is not nullable nor uninitialized\.$#'
+			identifier: nullCoalesce.initializedProperty
+			count: 2
+			path: src/Services/Core/DataPurgeService.php
+
+		-
+			message: '#^Offset ''file'' on array\{type\: int, message\: string, file\: string, line\: int\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: src/Services/Core/ExceptionHandlerService.php
+
+		-
+			message: '#^Offset ''line'' on array\{type\: int, message\: string, file\: string, line\: int\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: src/Services/Core/ExceptionHandlerService.php
+
+		-
+			message: '#^Offset ''message'' on array\{type\: int, message\: string, file\: string, line\: int\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: src/Services/Core/ExceptionHandlerService.php
+
+		-
+			message: '#^Offset ''type'' on array\{type\: int, message\: string, file\: string, line\: int\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: src/Services/Core/ExceptionHandlerService.php
+
+		-
+			message: '#^Method Dex\\Services\\Core\\OccurrenceService\:\:runtimeContext\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: src/Services/Core/OccurrenceService.php
+
+		-
+			message: '#^Property Dex\\Services\\Core\\QueryTrackingService\:\:\$config is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/Services/Core/QueryTrackingService.php
+
+		-
+			message: '#^Property Dex\\Services\\Core\\RequestContextService\:\:\$config is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/Services/Core/RequestContextService.php
+
+		-
+			message: '#^Parameter &\$ctx by\-ref type of method Dex\\Services\\Core\\RequestFinalizerService\:\:buildRow\(\) expects array, array\|null given\.$#'
+			identifier: parameterByRef.type
+			count: 1
+			path: src/Services/Core/RequestFinalizerService.php
+
+		-
+			message: '#^Negated boolean expression is always true\.$#'
+			identifier: booleanNot.alwaysTrue
+			count: 1
+			path: src/Services/Issues/IssueShowBreakdownsService.php
+
+		-
+			message: '#^Call to function is_array\(\) with array\<mixed, mixed\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/Services/Issues/IssueShowViewPrepService.php
+
+		-
+			message: '#^Offset 1 on array\{non\-falsy\-string, non\-empty\-string\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 2
+			path: src/Services/Issues/IssueShowViewPrepService.php
+
+		-
+			message: '#^Call to function is_array\(\) with array\<string, array\<string, list\<string\>\>\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/Services/Support/FilterService.php
+
+		-
+			message: '#^Call to function is_array\(\) with array\<string, list\<string\>\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 2
+			path: src/Services/Support/FilterService.php
+
+		-
+			message: '#^Call to function is_object\(\) with Config\\Filters will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: src/Services/Support/FilterService.php
+
+		-
+			message: '#^Property Config\\Filters\:\:\$filters \(array\<string, array\<string, list\<string\>\>\>\) on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.property
+			count: 1
+			path: src/Services/Support/FilterService.php
+
+		-
+			message: '#^Property Config\\Filters\:\:\$globals \(array\<string, array\<int\<0, max\>\|string, array\<string, list\<string\>\|string\>\|string\>\>\) on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.property
+			count: 1
+			path: src/Services/Support/FilterService.php
+
+		-
+			message: '#^Property Config\\Filters\:\:\$methods \(array\<string, list\<string\>\>\) on left side of \?\? is not nullable\.$#'
+			identifier: nullCoalesce.property
+			count: 1
+			path: src/Services/Support/FilterService.php
+
+		-
+			message: '#^Property Dex\\Services\\Support\\FilterService\:\:\$config is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/Services/Support/FilterService.php
+
+		-
+			message: '#^Property Dex\\Services\\Support\\FilterService\:\:\$pathService is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: src/Services/Support/FilterService.php
+
+		-
+			message: '#^Accessing offset string directly on \$_SERVER is discouraged\.$#'
+			identifier: codeigniter.superglobalAccess
+			count: 1
+			path: src/Support/ConfigResolver.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between non\-falsy\-string and '''' will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: src/Support/IpAllowList.php
+\n\n\n\n\n\n\n
+		-
+			message: '#^Offset 1 on array\{non\-falsy\-string, non\-empty\-string\} on left side of \?\? always exists and is not nullable\.$#'
+			identifier: nullCoalesce.offset
+			count: 1
+			path: src/Support/RequestSnapshot.php
+
+		-
+			message: '#^Method Dex\\Tests\\Adapters\\StubRequest\:\:getBody\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: tests/Adapters/StubRequest.php
+
+		-
+			message: '#^Accessing offset string directly on \$_SERVER is discouraged\.$#'
+			identifier: codeigniter.superglobalAccess
+			count: 1
+			path: tests/Filters/DexUiFilterTest.php
+
+		-
+			message: '#^Assigning string directly on offset string of \$_SERVER is discouraged\.$#'
+			identifier: codeigniter.superglobalAccessAssign
+			count: 1
+			path: tests/Filters/DexUiFilterTest.php
+
+		-
+			message: '#^Accessing offset mixed directly on \$_SERVER is discouraged\.$#'
+			identifier: codeigniter.superglobalAccess
+			count: 1
+			path: tests/Support/ConfigResolverTest.php
+
+		-
+			message: '#^Assigning string directly on offset string of \$_SERVER is discouraged\.$#'
+			identifier: codeigniter.superglobalAccessAssign
+			count: 1
+			path: tests/Support/ConfigResolverTest.php
+
+		-
+			message: '#^Method Dex\\Tests\\Support\\StubRequest\:\:getBody\(\) never returns null so it can be removed from the return type\.$#'
+			identifier: return.unusedType
+			count: 1
+			path: tests/Support/StubRequest.php

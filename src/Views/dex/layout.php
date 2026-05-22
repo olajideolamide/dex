@@ -111,9 +111,6 @@ $pageTitle = $title ?? 'DEX — Issue Tracking';
 </div>
 
 <div class="page">
-
-
-
     <div class="page-wrapper">
         <div class="container-xl">
             <?= $this->renderSection('content') ?>
@@ -127,7 +124,6 @@ $pageTitle = $title ?? 'DEX — Issue Tracking';
                 &nbsp;·&nbsp; Open-source issue tracking for CodeIgniter&nbsp;4
             </span>
             <span class="dex-footer__links">
-                <a href="https://www.dexphp.com" target="_blank" rel="noopener noreferrer">Website</a>
                 <a href="https://github.com/olajideolamide/dex" target="_blank" rel="noopener noreferrer">GitHub</a>
             </span>
         </div>

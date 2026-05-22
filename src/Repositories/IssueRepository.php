@@ -87,7 +87,7 @@ final class IssueRepository
                 'latest_method' => $issue['latest_method'] ?? null,
                 'environment' => $issue['environment'] ?? null,
                 'status'      => 'open',
-                'first_seen'  => DexTime::nowUtcString(),
+                'first_seen'  => $issue['first_seen'] ?? DexTime::nowUtcString(),
                 'last_seen'   => $issue['last_seen'] ?? DexTime::nowUtcString(),
                 'times_seen'  => 1,
             ], true);

@@ -88,7 +88,6 @@ $statusChipClass = match ($statusLabel) {
                 </div>
             </div>
         </div>
-
         <section class="dex-card mb-3" aria-label="Issue summary">
             <div class="dex-issue-head">
                 <div class="dex-issue-title">

@@ -15,3 +15,5 @@ docs/public
 .env
 .env.local
 .env.*.local
+# SQLite test database
+writable/database/test.sqlite

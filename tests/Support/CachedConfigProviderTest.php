@@ -5,22 +5,10 @@ declare(strict_types=1);
 namespace Dex\Tests\Support;
 
 use Dex\Support\CachedConfigProvider;
-use Dex\Support\ConfigResolver;
-use PHPUnit\Framework\TestCase;
-use ReflectionClass;
+use Dex\Tests\Support\DexTestCase;
 
-final class CachedConfigProviderTest extends TestCase
+final class CachedConfigProviderTest extends DexTestCase
 {
-    protected function setUp(): void
-    {
-        $this->resetConfigResolverCache();
-    }
-
-    protected function tearDown(): void
-    {
-        $this->resetConfigResolverCache();
-    }
-
     public function testGetCachesResolvedConfig(): void
     {
         $provider = new CachedConfigProvider();
@@ -29,12 +17,5 @@ final class CachedConfigProviderTest extends TestCase
         $second = $provider->get();
 
         $this->assertSame($first, $second);
-    }
-
-    private function resetConfigResolverCache(): void
-    {
-        $ref = new ReflectionClass(ConfigResolver::class);
-        $prop = $ref->getProperty('cached');
-        $prop->setValue(null);
     }
 }

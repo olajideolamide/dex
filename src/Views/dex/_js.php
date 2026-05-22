@@ -19,6 +19,15 @@
         searchTimer: null,
     };
 
+    const dexIssuesDeepLinkState = (() => {
+        const params = new URLSearchParams(window.location.search || '');
+        const issueId = Number(params.get('issue_id') || 0);
+        return {
+            issueId: Number.isFinite(issueId) && issueId > 0 ? issueId : null,
+            opened: false,
+        };
+    })();
+
     const dexIssueDialogState = {
         issueId: null,
         occurrenceId: null,
@@ -207,12 +216,30 @@
             return;
         }
 
+        dexIssuesTryOpenDeepLinkedIssue();
+
         if (!issues.length) {
             tbody.innerHTML = '<tr class="empty-row"><td colspan="8">No issues match your filters.</td></tr>';
             return;
         }
 
         tbody.innerHTML = issues.map(dexIssuesBuildRow).join('');
+    }
+
+    function dexIssuesTryOpenDeepLinkedIssue() {
+        if (dexIssuesState.loading || dexIssuesDeepLinkState.opened || !dexIssuesDeepLinkState.issueId) {
+            return;
+        }
+
+        if (dexIssueDialogState.issueId) {
+            dexIssuesDeepLinkState.opened = true;
+            return;
+        }
+
+        const tbody = document.getElementById('issuesTbody');
+        const row = tbody?.querySelector(`tr[data-id="${dexIssuesDeepLinkState.issueId}"]`) || null;
+        dexIssuesDeepLinkState.opened = true;
+        dexIssuesOpenDialog(dexIssuesDeepLinkState.issueId, null, row);
     }
 
     function dexIssuesDialogOverlay() {

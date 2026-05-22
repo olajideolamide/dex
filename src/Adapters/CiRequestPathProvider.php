@@ -21,7 +21,7 @@ class CiRequestPathProvider
     {
         try {
             $req = service('request');
-            if (! $req || ! method_exists($req, 'getUri')) {
+            if (! $req) {
                 return null;
             }
             return (string) $req->getUri()->getPath();

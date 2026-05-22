@@ -20,6 +20,16 @@ final class ConfigResolver
     private static ?PackageDex $cached = null;
 
     /**
+     * Reset the internal cache.
+     *
+     * Intended for test isolation (and safe to call at runtime).
+     */
+    public static function resetCache(): void
+    {
+        self::$cached = null;
+    }
+
+    /**
      * Resolve config from host .env first, then fall back to package defaults.
      */
     public static function resolve(): PackageDex
