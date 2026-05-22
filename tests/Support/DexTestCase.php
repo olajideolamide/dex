@@ -47,11 +47,14 @@ abstract class DexTestCase extends CIUnitTestCase
 
     private function clearDexEnv(): void
     {
+        $superglobals = Services::superglobals();
+
         foreach (array_unique($this->envKeys) as $key) {
             putenv($key);
             unset($_ENV[$key]);
-            //unset($_SERVER[$key]);
-            Services::superglobals()->unsetServer($key);
+            $server = $superglobals->getServerArray();
+            unset($server[$key]);
+            $superglobals->setServerArray($server);
         }
 
         $this->envKeys = [];
