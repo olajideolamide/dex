@@ -453,7 +453,7 @@ class RequestSnapshot
         ) {
             if (preg_match($pattern, $ua, $matches) === 1) {
                 $browser = $name;
-                $browserVersion = $matches[1] ?? null;
+                $browserVersion = $matches[1];
                 break;
             }
         }

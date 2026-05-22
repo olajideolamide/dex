@@ -1,4 +1,5 @@
 name: PHPCS (advisory)
+run-name: "PHPCS advisory on ${{ github.ref_name }} (${{ github.event_name }})"
 
 on:
   push:
@@ -8,6 +9,7 @@ on:
 
 jobs:
   phpcs:
+    name: "PHP 8.3 / advisory"
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:

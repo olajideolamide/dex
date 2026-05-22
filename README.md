@@ -39,6 +39,14 @@ Use DEX to:
 - See event volume and issue trends from a clean dashboard.
 - Keep monitoring close to your application without shipping every detail to a third-party service.
 
+## Requirements
+
+DEX requires:
+
+- PHP 8.2+
+- CodeIgniter 4.6.2+
+- Composer
+
 ## Screenshots
 
 <p align="center">

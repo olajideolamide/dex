@@ -5,7 +5,7 @@
   "license": "MIT",
   "require": {
     "php": ">=8.2",
-    "codeigniter4/framework": "^4.5 || ^4.6",
+    "codeigniter4/framework": "^4.6.2",
     "ext-mbstring": "*"
   },
   "autoload": {

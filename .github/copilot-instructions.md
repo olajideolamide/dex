@@ -1,4 +1,4 @@
-# Copilot Instructions (Dex — CodeIgniter 4 Library)
+﻿# Copilot Instructions (Dex — CodeIgniter 4 Library)
 
 - You are working in a CodeIgniter 4 (CI4) application library that monitors the performance and logs errors that occur in a CodeIgniter 4 web application. You can think of it like a mini version of Sentry, but built specifically for CI4 and with a focus on simplicity and maintainability.
 - The library is designed to be easily integrated into any CI4 project, providing insights into application performance and error tracking without the overhead of a full APM solution.
