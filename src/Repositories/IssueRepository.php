@@ -157,7 +157,7 @@ final class IssueRepository
                 SET
                     last_seen = ?,
                     times_seen = times_seen + 1,
-                    level = ?,
+                    level = COALESCE(?, level),
                     class = COALESCE(?, class),
                     latest_path = COALESCE(?, latest_path),
                     latest_method = COALESCE(?, latest_method),
@@ -169,7 +169,7 @@ final class IssueRepository
         try {
             $ok = $this->db->query($sql, [
                 $lastSeen,
-                $issue['level'] ?? 'error',
+                $issue['level'] ?? null,
                 $issue['class'] ?? null,
                 $issue['latest_path'] ?? null,
                 $issue['latest_method'] ?? null,
