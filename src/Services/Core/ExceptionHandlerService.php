@@ -160,7 +160,7 @@ final class ExceptionHandlerService
 
         $file = (string) ($err['file'] ?? '');
         $fileNorm = str_replace('\\', '/', $file);
-        if (str_contains($fileNorm, '/vendor/jide/dex/')) {
+        if (str_contains($fileNorm, '/vendor/olajideolamide/dex/')) {
             return;
         }
 
