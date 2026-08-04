@@ -39,6 +39,14 @@ Use DEX to:
 - See event volume and issue trends from a clean dashboard.
 - Keep monitoring close to your application without shipping every detail to a third-party service.
 
+## Quick Install
+
+```bash
+composer require olajideolamide/dex
+```
+
+Then follow the [getting started guide](https://www.dexphp.com/documentation/getting-started/quickstart) to run the migration and access the dashboard.
+
 ## Requirements
 
 DEX requires:
@@ -67,4 +75,8 @@ Please keep changes focused and easy to review. Small, well-tested improvements 
 
 If you run into a problem, [open a detailed issue](https://github.com/olajideolamide/dex/issues/new) with the CodeIgniter version, PHP version, DEX version, the steps to reproduce it, and any relevant logs or screenshots.
 
-For questions, ideas, or design discussions, start a new [GitHub Discussion](https://github.com/olajideolamide/dex/discussions). If you believe you have found a security issue, please review the [security policy](security.md) before sharing details publicly.
+For questions, ideas, or design discussions, start a new [GitHub Discussion](https://github.com/olajideolamide/dex/discussions). If you believe you have found a security issue, please review the [security policy](SECURITY.md) before sharing details publicly.
+
+## License
+
+DEX is open-source software licensed under the [MIT License](LICENSE).
