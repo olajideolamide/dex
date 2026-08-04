@@ -26,7 +26,7 @@ This Code of Conduct applies within all project spaces, including issues, pull r
 
 ## Reporting
 
-If you experience or witness unacceptable behavior, please report it privately to the project maintainers. The simplest path is to contact maintainers via GitHub Discussions or another private channel you already have with them. Avoid escalating in public threads.
+If you experience or witness unacceptable behavior, please report it privately to the project maintainers. Avoid escalating in public threads.
 
 ## Enforcement
 

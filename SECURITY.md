@@ -12,7 +12,7 @@ Please do not open a public issue.
 
 Preferred reporting path:
 
-- Use GitHub Security Advisories (if enabled for this repository) to report the vulnerability privately to maintainers.
+- [Report a vulnerability via GitHub Security Advisories](https://github.com/olajideolamide/dex/security/advisories/new)
 
 In your report, include:
 

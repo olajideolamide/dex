@@ -9,6 +9,7 @@ Thanks for taking the time to contribute. DEX is a CodeIgniter 4-native monitori
 - Install dependencies: `composer install`
 - Run tests: `composer test`
 - Run static analysis: `composer phpstan`
+- Run code style check: `composer phpcs`
 - Run full QA (when needed): `composer qa:full`
 
 ## Running tests
@@ -72,7 +73,7 @@ The UI is intentionally lightweight:
 
 ## Reporting Bugs
 
-Use the bug report form and include:
+[Use the bug report form](https://github.com/olajideolamide/dex/issues/new?template=bug_report.yml) and include:
 
 - DEX version, PHP version, CodeIgniter version
 - Steps to reproduce
@@ -81,7 +82,7 @@ Use the bug report form and include:
 
 ## Requesting Features
 
-Use the feature request form and describe:
+[Use the feature request form](https://github.com/olajideolamide/dex/issues/new?template=feature_request.yml) and describe:
 
 - The problem you're trying to solve
 - The simplest acceptable solution
