@@ -60,8 +60,8 @@ final class FilterService
 
             // Globals
             $globals = $filters->globals ?? [];
-            $before = array_merge($before, (array)($globals['before'] ?? []));
-            $after = array_merge($after, (array)($globals['after'] ?? []));
+            $before = array_merge($before, (array)($globals['before']));
+            $after = array_merge($after, (array)($globals['after']));
 
             // HTTP method filters (treated as "before" per CI4 config shape)
             $methods = $filters->methods ?? [];
